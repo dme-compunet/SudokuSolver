@@ -1,0 +1,89 @@
+﻿<ContentControl x:Class="Compunet.SudokuSolver.Views.CreateSudokuPuzzleControl"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                xmlns:local="clr-namespace:Compunet.SudokuSolver.Controls" 
+                xmlns:mvvm="clr-namespace:Compunet.SudokuSolver.Mvvm"
+                mc:Ignorable="d" 
+                FlowDirection="RightToLeft"
+                Height="150" Width="350">
+    
+    <Grid Margin="0">
+
+        <!--<Border Background="{DynamicResource Primary50}"
+                BorderBrush="{DynamicResource Primary200}"
+                BorderThickness="0"
+                CornerRadius="15">
+
+            <Border.Effect>
+                <DropShadowEffect Opacity=".3" 
+                                  BlurRadius="10" 
+                                  ShadowDepth="2" 
+                                  Direction="225"/>
+            </Border.Effect>
+
+        </Border>-->
+
+        <Grid Margin="0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+
+                <TextBlock FontFamily="{StaticResource UIFont}"
+                           Foreground="{DynamicResource Primary800}"
+                           FontSize="{StaticResource FontSizeLarge}"
+                           HorizontalAlignment="Center"
+                           Padding="10">
+                    <Run Text="חולל חידת סודוקו"/>
+                </TextBlock>
+                
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <TextBlock Text="בחר את רמת הקושי:"
+                           FontFamily="{StaticResource UIFont}"
+                           FontSize="{StaticResource FontSizeSmall}"
+                           Margin="0 0 0 15"
+                           Foreground="{DynamicResource Primary700}"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"/>
+            </Grid>
+
+            <UniformGrid Grid.Row="2" Columns="3">
+                
+                <Button Grid.Column="0"
+                        Style="{StaticResource ThemePrimaryBubbleButton}"
+                        Padding="10"
+                        Content="קל"
+                        Margin="0 0 5 0"
+                        Command="{Binding EasyCreateCommand}"/>
+                
+                <Button Grid.Column="1"
+                        Style="{StaticResource ThemePrimaryBubbleRaisedButton}"
+                        Padding="10"
+                        Margin="5 0"
+                        Content="בינוני" 
+                        Command="{Binding MediumCreateCommand}"/>
+                
+                <Button Grid.Column="2"
+                        Style="{StaticResource ThemePrimaryBubbleButton}"
+                        Padding="10"
+                        Margin="5 0 0 0"
+                        Content="קשה"
+                        Command="{Binding HardCreateCommand}"/>
+                
+            </UniformGrid>
+
+
+        </Grid>
+
+
+    </Grid>
+    
+</ContentControl>

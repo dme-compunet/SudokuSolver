@@ -1,0 +1,70 @@
+﻿<ListBox 
+    x:Class="Compunet.SudokuSolver.Controls.SudokuListBox"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:local="clr-namespace:Compunet.SudokuSolver.Controls" 
+    mc:Ignorable="d" 
+    FlowDirection="LeftToRight"
+    d:DesignHeight="450" d:DesignWidth="450">
+
+    <ListBox.Template>
+        <ControlTemplate TargetType="{x:Type local:SudokuListBox}">
+            <Viewbox>
+                <Grid Width="450" Height="450" Margin="1">
+
+                    <!-- Border Clip -->
+                    <Border Name="BorderClip"
+                            CornerRadius="{TemplateBinding CornerRadius}"
+                            Background="{DynamicResource Primary100}">
+                    </Border>
+
+                    <ItemsPresenter>
+                        <ItemsPresenter.OpacityMask>
+                            <VisualBrush Visual="{Binding ElementName=BorderClip}"/>
+                        </ItemsPresenter.OpacityMask>
+                    </ItemsPresenter>
+
+                    <!-- Grid Lines -->
+                    <Canvas>
+                        <Border Background="{DynamicResource Primary500}"
+                                Canvas.Top="150"
+                                Width="450"
+                                Height="1.5"/>
+                        <Border Background="{DynamicResource Primary500}"
+                                Canvas.Top="300"
+                                Width="450"
+                                Height="1.5"/>
+
+                        <Border Background="{DynamicResource Primary500}"
+                                Canvas.Left="150"
+                                Width="1.5"
+                                Height="450"/>
+                        <Border Background="{DynamicResource Primary500}"
+                                Canvas.Left="300"
+                                Width="1.5"
+                                Height="450"/>
+                    </Canvas>
+
+                    <!-- Border Frame Stroke -->
+                    <Border CornerRadius="{TemplateBinding CornerRadius}"
+                            Margin="-1"
+                            Opacity="1"
+                            BorderThickness="3"
+                            BorderBrush="{DynamicResource Primary300}"/>
+
+
+
+                </Grid>
+            </Viewbox>
+        </ControlTemplate>
+    </ListBox.Template>
+
+    <ListBox.ItemsPanel>
+        <ItemsPanelTemplate>
+            <Canvas />
+        </ItemsPanelTemplate>
+    </ListBox.ItemsPanel>
+    
+</ListBox>

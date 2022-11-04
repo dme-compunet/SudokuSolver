@@ -1,0 +1,113 @@
+﻿<ContentControl x:Class="Compunet.SudokuSolver.Views.SubmitFeedbackContent"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                xmlns:local="clr-namespace:Compunet.SudokuSolver.Controls"
+                mc:Ignorable="d" 
+                Focusable="False"
+                FlowDirection="RightToLeft"
+                Height="300" Width="500">
+    
+    <Grid Margin="10">
+        
+        <Border Background="{DynamicResource Primary50}"
+                BorderBrush="{DynamicResource Primary200}"
+                BorderThickness="0"
+                CornerRadius="15">
+
+            <Border.Effect>
+                <DropShadowEffect Opacity=".3" 
+                                  BlurRadius="10" 
+                                  ShadowDepth="2" 
+                                  Direction="225"/>
+            </Border.Effect>
+
+        </Border>
+
+        <Grid Margin="12">
+            
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <TextBlock FontFamily="{StaticResource UIFont}"
+                               Foreground="{DynamicResource Primary800}"
+                               FontSize="{StaticResource FontSizeLarge}"
+                               HorizontalAlignment="Center"
+                               Padding="5 10">
+                        <Run Text="שלח משוב"/>
+                        <Run Text="(בבניה...)" FontSize="15"/>
+                    </TextBlock>
+                </Grid>
+
+                <Grid Grid.Row="1"
+                      Margin="0 0 0 12">
+                    
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Content="מאת:"
+                           Foreground="{DynamicResource Primary800}"
+                           FontFamily="{StaticResource UIFont}"
+                           FontSize="{StaticResource FontSizeRegular}"
+                           Grid.Row="0"
+                           Grid.Column="0"/>
+
+                    <TextBox Style="{StaticResource ThemeTextBox}"
+                             Grid.Column="1"
+                             VerticalAlignment="Center"
+                             Padding="6"
+                             Margin="6 4 0 10"/>
+                    
+                    
+                    <Label Content="תוכן:"
+                           Foreground="{DynamicResource Primary800}"
+                           FontFamily="{StaticResource UIFont}"
+                           FontSize="{StaticResource FontSizeRegular}"
+                           Grid.Row="1"
+                           Grid.Column="0"/>
+
+                    <TextBox Style="{DynamicResource ThemeTextBox}" 
+                             Grid.Row="1"
+                             Grid.Column="1"
+                             AcceptsReturn="True"
+                             Padding="6"
+                             Margin="6 4 0 0"/>
+
+                </Grid>
+
+                <StackPanel Grid.Row="2"
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Right">
+                    
+                    <Button Style="{StaticResource ThemeBasicBubbleButton}"
+                            Content="ביטול"
+                            Padding="15 10"
+                            Margin="0 0 10 0"/>
+
+                    <Button Style="{StaticResource ThemePrimaryBubbleRaisedButton}"
+                            Content="שלח"
+                            Padding="20 10"/>
+
+                </StackPanel>
+                
+            </Grid>
+            
+        </Grid>
+        
+    </Grid>
+    
+</ContentControl>

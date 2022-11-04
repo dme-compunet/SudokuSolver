@@ -1,0 +1,73 @@
+﻿<UserControl x:Class="Compunet.SudokuSolver.Views.AppSidebarControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Compunet.SudokuSolver.Views" xmlns:converters="clr-namespace:Compunet.SudokuSolver.Mvvm.Converters"
+             mc:Ignorable="d" 
+             Width="60"
+             Margin="10"
+             FlowDirection="RightToLeft"
+             d:DesignHeight="600">
+    <Grid>
+        <DockPanel LastChildFill="False">
+
+            <StackPanel DockPanel.Dock="Top">
+
+                <Button ContentTemplate="{StaticResource ThemeIcon}"
+                        VerticalContentAlignment="Center"
+                        HorizontalContentAlignment="Center"
+                        ToolTip="החלף ערכת נושא"
+                        Padding="13"
+                        VerticalAlignment="Top"
+                        Command="{Binding NextThemeCommand}"
+                        Style="{StaticResource ThemePrimaryBubbleIconButton}"/>
+
+                <Button ContentTemplate="{StaticResource CompressIcon}"
+                        ToolTip="צמצם"
+                        Margin="0 10 0 0"
+                        VerticalContentAlignment="Center"
+                        HorizontalContentAlignment="Center"
+                        Padding="13"
+                        Command="{Binding CompressCommand}"
+                        CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}"
+                        VerticalAlignment="Top"
+                        Style="{StaticResource ThemePrimaryBubbleIconButton}"/>
+
+                <Button ContentTemplate="{StaticResource PuzzledImage}"
+                        ToolTip="צור חידת סודוקו"
+                        Margin="0 10 0 0"
+                        VerticalContentAlignment="Center"
+                        HorizontalContentAlignment="Center"
+                        Padding="13"
+                        VerticalAlignment="Top"
+                        Command="{Binding CreatePuzzleCommand}"
+                        IsEnabled="{Binding IsBusy.Value, Converter={converters:BooleanConvertConverter}}"
+                        Style="{StaticResource ThemePrimaryBubbleIconButton}"/>
+
+            </StackPanel>
+
+            <Grid HorizontalAlignment="Left"
+                  VerticalAlignment="Bottom">
+                
+                <Grid>
+                    
+                    <Button ContentTemplate="{StaticResource SmilingFaceWithHeartImage}"
+                                ToolTip="שלח משוב"
+                                VerticalContentAlignment="Center"
+                                HorizontalContentAlignment="Center"
+                                Padding="13"
+                                VerticalAlignment="Top"
+                                Style="{StaticResource ThemePrimaryBubbleIconButton}"/>
+                
+                </Grid>
+                
+            </Grid>
+
+            <!--<b:Interaction.Behaviors>
+                <behavior:SidebarCollapseBehavior HostActualWidth="{Binding ElementName=SidebarArea, Path=ActualWidth}"/>
+            </b:Interaction.Behaviors>-->
+
+        </DockPanel>
+    </Grid>
+</UserControl>

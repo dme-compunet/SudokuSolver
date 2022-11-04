@@ -1,0 +1,196 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:Compunet.SudokuSolver.Controls">
+
+    <!--#region Bubble Basic Button -->
+
+    <Style x:Key="ThemeBasicBubbleButton" TargetType="Button">
+        <Setter Property="FontFamily" Value="{StaticResource UIFont}" />
+        <Setter Property="FontSize" Value="{StaticResource FontSizeRegular}" />
+        <Setter Property="Foreground" Value="{DynamicResource Primary800}" />
+        <Setter Property="Background" Value="{x:Null}" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="controls:ButtonChrome.CornerRadius" Value="12" />
+        <Setter Property="controls:ButtonChrome.DropShadow" Value="False" />
+        <Setter Property="controls:ButtonChrome.HoverBackground" Value="{DynamicResource Primary200}" />
+        <Setter Property="controls:ButtonChrome.HoverBackgroundOpacity" Value="0.3" />
+        <Setter Property="controls:ButtonChrome.BubbleBackground" Value="{DynamicResource Primary300}" />
+        <Setter Property="controls:ButtonChrome.BubbleBackgroundOpacity" Value="0.3" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+
+                        <Grid Name="Shadow" 
+                              Opacity="0"
+                              Focusable="False">
+                            
+                            <Border Margin="0 4 4 0"
+                                    CornerRadius="{TemplateBinding controls:ButtonChrome.CornerRadius}"
+                                    Background="Black"
+                                    Opacity=".5">
+                                <Border.Effect>
+                                    <BlurEffect Radius="10"/>
+                                </Border.Effect>
+                            </Border>
+
+                        </Grid>
+
+                        <Border Name="Border"
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="{TemplateBinding controls:ButtonChrome.CornerRadius}"/>
+
+                        <controls:ButtonBubbleChrome TargetButton="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Button}}"
+                                                     HoverBackground="{TemplateBinding controls:ButtonChrome.HoverBackground}"
+                                                     HoverBackgroundOpacity="{TemplateBinding controls:ButtonChrome.HoverBackgroundOpacity}"
+                                                     BubbleBackground="{TemplateBinding controls:ButtonChrome.BubbleBackground}"
+                                                     BubbleBackgroundOpacity="{TemplateBinding controls:ButtonChrome.BubbleBackgroundOpacity}"
+                                                     CornerRadius="{TemplateBinding controls:ButtonChrome.CornerRadius}"/>
+
+
+                        <!--<Border Name="BorderHover" Opacity="0"
+                                Background="{TemplateBinding controls:ButtonChrome.HoverBackground}"
+                                CornerRadius="{TemplateBinding controls:ButtonChrome.CornerRadius}"/>
+
+                        <Border Name="BorderPressed"
+                                Opacity="0"
+                                Background="{TemplateBinding controls:ButtonChrome.PressedBackground}"
+                                CornerRadius="{TemplateBinding controls:ButtonChrome.CornerRadius}"/>-->
+
+                        <ContentPresenter Margin="{TemplateBinding Padding}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          RecognizesAccessKey="True"
+                                          SnapsToDevicePixels="True"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+
+                        <DataTrigger Binding="{Binding (controls:ButtonChrome.DropShadow), RelativeSource={RelativeSource Mode=Self}}" Value="True">
+                            <Setter Property="Opacity" TargetName="Shadow" Value="1" />
+                        </DataTrigger>
+
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{DynamicResource Primary100}" />
+                            <Setter Property="Foreground" Value="{DynamicResource Primary300}" />
+                            <Setter Property="controls:ButtonChrome.DropShadow" Value="False" />
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="{DynamicResource Primary200}" />
+                <Setter Property="controls:ButtonChrome.DropShadow" Value="False" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="ThemePrimaryBubbleButton" TargetType="Button" BasedOn="{StaticResource ThemeBasicBubbleButton}">
+        <Setter Property="Foreground" Value="{DynamicResource Accent500}" />
+        <Setter Property="controls:ButtonChrome.BubbleBackground" Value="{DynamicResource Accent500}" />
+        <Setter Property="controls:ButtonChrome.BubbleBackgroundOpacity" Value="0.2" />
+    </Style>
+
+    <Style x:Key="ThemeSystemWindowButton" TargetType="Button" BasedOn="{StaticResource ThemeBasicBubbleButton}">
+        <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
+        <Setter Property="Background" Value="{DynamicResource Primary100}" />
+    </Style>
+
+    <!--#endregion-->
+
+    <!--#region RaisedButton -->
+
+    <Style x:Key="ThemeBasicBubbleRaisedButton" TargetType="Button" BasedOn="{StaticResource ThemeBasicBubbleButton}">
+        <Setter Property="controls:ButtonChrome.DropShadow" Value="True" />
+        <Setter Property="Background" Value="{DynamicResource Primary100}" />
+    </Style>
+
+    <Style x:Key="ThemePrimaryBubbleRaisedButton" TargetType="Button" BasedOn="{StaticResource ThemeBasicBubbleRaisedButton}">
+        <Setter Property="Foreground" Value="{DynamicResource BasicLight}" />
+        <Setter Property="Background" Value="{DynamicResource Accent500}" />
+        <Setter Property="controls:ButtonChrome.HoverBackground" Value="{DynamicResource BasicDark}" />
+        <Setter Property="controls:ButtonChrome.HoverBackgroundOpacity" Value="0.1" />
+        <Setter Property="controls:ButtonChrome.BubbleBackground" Value="{DynamicResource BasicDark}" />
+        <Setter Property="controls:ButtonChrome.BubbleBackgroundOpacity" Value="0.1" />
+    </Style>
+
+    <!--#endregion-->
+
+    <!--#region IconButton -->
+
+    <Style x:Key="ThemeBasicBubbleIconButton" TargetType="Button" BasedOn="{StaticResource ThemeBasicBubbleButton}">
+        <Setter Property="Foreground" Value="{DynamicResource Primary800}"/>
+        <Setter Property="controls:ButtonChrome.DropShadow" Value="False" />
+        <Setter Property="controls:ButtonChrome.HoverBackground" Value="{DynamicResource Primary300}" />
+        <Setter Property="controls:ButtonChrome.HoverBackgroundOpacity" Value="0.2" />
+        <Setter Property="controls:ButtonChrome.BubbleBackground" Value="{DynamicResource Primary500}" />
+        <Setter Property="controls:ButtonChrome.BubbleBackgroundOpacity" Value="0.2" />
+
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+
+                    <Viewbox>
+
+                        <Grid Width="50" Height="50">
+
+                            <controls:ButtonBubbleChrome TargetButton="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Button}}"
+                                                         HoverBackground="{TemplateBinding controls:ButtonChrome.HoverBackground}"
+                                                         HoverBackgroundOpacity="{TemplateBinding controls:ButtonChrome.HoverBackgroundOpacity}"
+                                                         BubbleBackground="{TemplateBinding controls:ButtonChrome.BubbleBackground}"
+                                                         BubbleBackgroundOpacity="{TemplateBinding controls:ButtonChrome.BubbleBackgroundOpacity}"
+                                                         CornerRadius="25"/>
+
+                            <ContentPresenter Margin="{TemplateBinding Padding}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              RecognizesAccessKey="True"
+                                              SnapsToDevicePixels="True"/>
+
+                            <Grid Name="FocusElement"
+                                  VerticalAlignment="Bottom"
+                                  Visibility="Hidden">
+                                
+                                <Border Background="{DynamicResource Primary200}"
+                                        Margin="5 0 5 -2"
+                                        Height="2"
+                                        CornerRadius="1"/>
+                                
+                            </Grid>
+
+                        </Grid>
+
+                    </Viewbox>
+
+                    <!--<ControlTemplate.Triggers>
+                        <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                            <Setter Property="Visibility" TargetName="FocusElement" Value="Visible"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>-->
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="{DynamicResource Primary200}" />
+            </Trigger>
+        </Style.Triggers>
+
+    </Style>
+
+    <Style x:Key="ThemePrimaryBubbleIconButton" TargetType="Button" BasedOn="{StaticResource ThemeBasicBubbleIconButton}">
+        <Setter Property="Foreground" Value="{DynamicResource Accent500}"/>
+        <Setter Property="controls:ButtonChrome.BubbleBackground" Value="{DynamicResource Accent500}" />
+    </Style>
+
+    <!--#endregion-->
+
+</ResourceDictionary>

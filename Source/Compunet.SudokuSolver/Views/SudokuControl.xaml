@@ -1,0 +1,107 @@
+﻿<UserControl x:Class="Compunet.SudokuSolver.Views.SudokuControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:controls="clr-namespace:Compunet.SudokuSolver.Controls"
+             xmlns:converters="clr-namespace:Compunet.SudokuSolver.Mvvm.Converters" 
+             xmlns:mvvm="clr-namespace:Compunet.SudokuSolver.Mvvm" 
+             xmlns:wpf="clr-namespace:Compunet.SudokuSolver.Windows" 
+             xmlns:b="http://schemas.microsoft.com/xaml/behaviors" 
+             xmlns:behavior="clr-namespace:Compunet.SudokuSolver.Behaviors" 
+             d:DataContext="{d:DesignInstance Type=mvvm:SudokuViewModel}"
+             mc:Ignorable="d" 
+             FlowDirection="RightToLeft">
+
+    <UserControl.InputBindings>
+        <wpf:UndoKeyBinding Command="{Binding UndoCommand}"/>
+        <wpf:RedoKeyBinding Command="{Binding RedoCommand}"/>
+    </UserControl.InputBindings>
+
+    <Grid Height="550" 
+          Width="500"
+          IsEnabled="{Binding IsBusy.Value, Converter={converters:BooleanConvertConverter}}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Margin="15 0">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Style="{StaticResource ThemePrimaryBubbleRaisedButton}"
+                    FontSize="20"
+                    Padding="10"
+                    Grid.Column="0"
+                    IsEnabled="{Binding CanSolve.Value}"
+                    Content="{Binding SolveButtonText.Value}"
+                    Command="{Binding SolveCommand}"/>
+
+            <Button Style="{StaticResource ThemePrimaryBubbleIconButton}"
+                    IsEnabled="{Binding CanUndo.Value}"
+                    Command="{Binding UndoCommand}"
+                    ToolTip="בטל את הפעולה האחרונה"
+                    Padding="12"
+                    ContentTemplate="{StaticResource UndoIcon}"
+                    Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"
+                    Grid.Column="2"/>
+
+            <Button Style="{StaticResource ThemePrimaryBubbleIconButton}"
+                    IsEnabled="{Binding CanRedo.Value}"
+                    Command="{Binding RedoCommand}"
+                    ToolTip="חזור על הביטול האחרון"
+                    Padding="12"
+                    ContentTemplate="{StaticResource RedoIcon}"
+                    Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"
+                    Grid.Column="4"/>
+
+            <Button Style="{StaticResource ThemePrimaryBubbleIconButton}"
+                    IsEnabled="{Binding CanReset.Value}"
+                    Command="{Binding ResetCommand}"
+                    Padding="12"
+                    ToolTip="אפס את הלוח"
+                    ContentTemplate="{StaticResource ResetIcon}"
+                    Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"
+                    Grid.Column="6"/>
+
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="15">
+
+            <!-- Shadow Border -->
+            <Border CornerRadius="15"
+                                    Margin="0 4 4 0"
+                                    Background="Black"
+                                    Opacity=".5">
+
+                <Border.Effect>
+                    <BlurEffect Radius="20"/>
+                </Border.Effect>
+
+            </Border>
+
+
+            <controls:SudokuListBox SelectedIndex="{Binding SelectedIndex}"
+                                  Board="{Binding Board.Value}"
+                                  CornerRadius="15">
+                <b:Interaction.Behaviors>
+                    <behavior:InvokeCommandOnKeyDownBehavior Command="{Binding KeyDownCommand}"/>
+                </b:Interaction.Behaviors>
+            </controls:SudokuListBox>
+
+        </Grid>
+
+    </Grid>
+
+
+</UserControl>

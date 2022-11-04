@@ -1,0 +1,18 @@
+﻿<Application x:Class="Compunet.SudokuSolver.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Compunet.SudokuSolver">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Theming/Themes/LightTheme.xaml"/>
+                <ResourceDictionary Source="/Theming/Fonts.xaml"/>
+                <ResourceDictionary Source="/Theming/Icons.xaml"/>
+                <ResourceDictionary Source="/Theming/ToolTip.xaml"/>
+                <ResourceDictionary Source="/Theming/TextBox.xaml"/>
+                <ResourceDictionary Source="/Theming/Buttons.xaml"/>
+                <ResourceDictionary Source="/Theming/Windows.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

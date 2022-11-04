@@ -1,0 +1,65 @@
+﻿<Window x:Class="Compunet.SudokuSolver.Controls.DialogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Compunet.SudokuSolver.Controls"
+        mc:Ignorable="d"
+        FlowDirection="RightToLeft"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterOwner"
+        SizeToContent="WidthAndHeight"
+        Title="סודוקו" Height="200" Width="400">
+
+    <Window.Template>
+        <ControlTemplate TargetType="Window">
+            
+            <Grid>
+                
+                <Grid Margin="10">
+                    
+                    <Border Background="{DynamicResource Primary50}"
+                            BorderBrush="{DynamicResource Primary200}"
+                            BorderThickness="0"
+                            CornerRadius="15">
+
+                        <Border.Effect>
+                            <DropShadowEffect Opacity=".3" 
+                                  BlurRadius="10" 
+                                  ShadowDepth="2" 
+                                  Direction="225"/>
+                        </Border.Effect>
+
+                    </Border>
+
+                    <Grid Margin="10">
+
+                        <Grid HorizontalAlignment="Right"
+                              VerticalAlignment="Top">
+                            
+                            <Button ContentTemplate="{StaticResource CloseIcon}"
+                                    Padding="16"
+                                    IsCancel="True"
+                                    Foreground="{DynamicResource Primary800}"
+                                    Style="{StaticResource ThemeBasicBubbleIconButton}"
+                                    Width="35"
+                                    Height="35"/>
+                            
+                        </Grid>
+
+                        <ContentPresenter Content="{TemplateBinding Content}"/>
+
+                    </Grid>
+                    
+                </Grid>
+                
+            </Grid>
+            
+        </ControlTemplate>
+    </Window.Template>
+    
+    <Grid>
+        
+    </Grid>
+</Window>
