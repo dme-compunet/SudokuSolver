@@ -1,5 +1,6 @@
 ﻿using Compunet.SudokuSolver.Core;
 using Compunet.SudokuSolver.Extensions.Reactive;
+using Compunet.SudokuSolver.Mvvm.Base;
 using Compunet.SudokuSolver.Mvvm.Commands;
 using System;
 using System.Reactive.Linq;

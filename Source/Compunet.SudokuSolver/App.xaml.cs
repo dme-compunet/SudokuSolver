@@ -1,13 +1,13 @@
-﻿using Compunet.SudokuSolver.Container;
+﻿using Compunet.SudokuSolver.Application;
+using Compunet.SudokuSolver.Container;
 using Compunet.SudokuSolver.Mvvm;
 using Compunet.SudokuSolver.Services;
-using Compunet.SudokuSolver.Theming.Themes;
 using Microsoft.Extensions.DependencyInjection;
 using System.Windows;
 
 namespace Compunet.SudokuSolver
 {
-    public partial class App : Application
+    public partial class App : System.Windows.Application
     {
         protected override async void OnStartup(StartupEventArgs e)
         {
@@ -17,7 +17,7 @@ namespace Compunet.SudokuSolver
             IoC.CreateSimple(services);
 
             await IoC.Simple.GetRequiredService<ISettingsService>().Load();
-            await IoC.Simple.GetRequiredService<IThemeService>().Load();
+            await IoC.Simple.GetRequiredService<IApplicationResourceManager>().Load();
 
             MainWindow = new AppWindow();
             MainWindow.Show();
@@ -27,14 +27,14 @@ namespace Compunet.SudokuSolver
         {
             return services.AddTransient<CreatePuzzleDialogViewModel>()
                            .AddTransient<SudokuViewModel>()
-                           .AddTransient<AppWindowViewModel>()
                            .AddTransient<AppSidebarViewModel>()
                            .AddSingleton<ISudokuStoreService, SudokuStoreService>()
                            .AddSingleton<ISudokuInputService, SudokuInputService>()
-                           .AddSingleton<ISettingsService, SettingsService>()
+                           .AddSingleton<IApplicationResourceManager, ApplicationResourceManager>()
                            .AddSingleton<ICreatePuzzleDialogService, CreatePuzzleDialogService>()
+                           .AddSingleton<ISettingsService, SettingsService>()
                            .AddSingleton<IExitService, ExitService>()
-                           .AddSingleton<IThemeService, ThemeManager>();
+                           ;
         }
 
         protected override void OnExit(ExitEventArgs e)

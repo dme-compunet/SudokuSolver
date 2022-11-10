@@ -8,10 +8,6 @@ namespace Compunet.SudokuSolver.Utilities
     {
         private readonly SemaphoreSlim locker = new(1, 1);
 
-        public async void Lock(Func<Task> work) => await LockAsync(work);
-
-        public async void Lock(Action work) => await LockAsync(work);
-
         public async Task LockAsync(Action work)
         {
             await locker.WaitAsync();

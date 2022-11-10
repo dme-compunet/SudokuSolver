@@ -3,10 +3,10 @@
                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-                xmlns:local="clr-namespace:Compunet.SudokuSolver.Controls" 
-                xmlns:mvvm="clr-namespace:Compunet.SudokuSolver.Mvvm"
+                xmlns:mvvm="clr-namespace:Compunet.SudokuSolver.Mvvm" 
+                d:DataContext="{d:DesignInstance Type=mvvm:CreatePuzzleDialogViewModel}"
                 mc:Ignorable="d" 
-                FlowDirection="RightToLeft"
+                FlowDirection="{DynamicResource MainFlowDirection}"
                 Height="150" Width="350">
     
     <Grid Margin="0">
@@ -40,13 +40,13 @@
                            FontSize="{StaticResource FontSizeLarge}"
                            HorizontalAlignment="Center"
                            Padding="10">
-                    <Run Text="חולל חידת סודוקו"/>
+                    <Run Text="{DynamicResource GenerateSudokuPuzzleTitle}"/>
                 </TextBlock>
                 
             </Grid>
 
             <Grid Grid.Row="1">
-                <TextBlock Text="בחר את רמת הקושי:"
+                <TextBlock Text="{DynamicResource SelectPuzzleLevelHeader}"
                            FontFamily="{StaticResource UIFont}"
                            FontSize="{StaticResource FontSizeSmall}"
                            Margin="0 0 0 15"
@@ -60,7 +60,7 @@
                 <Button Grid.Column="0"
                         Style="{StaticResource ThemePrimaryBubbleButton}"
                         Padding="10"
-                        Content="קל"
+                        Content="{DynamicResource PuzzleEasyLevel}"
                         Margin="0 0 5 0"
                         Command="{Binding EasyCreateCommand}"/>
                 
@@ -68,14 +68,14 @@
                         Style="{StaticResource ThemePrimaryBubbleRaisedButton}"
                         Padding="10"
                         Margin="5 0"
-                        Content="בינוני" 
+                        Content="{DynamicResource PuzzleMediumLevel}" 
                         Command="{Binding MediumCreateCommand}"/>
                 
                 <Button Grid.Column="2"
                         Style="{StaticResource ThemePrimaryBubbleButton}"
                         Padding="10"
                         Margin="5 0 0 0"
-                        Content="קשה"
+                        Content="{DynamicResource PuzzleHardLevel}"
                         Command="{Binding HardCreateCommand}"/>
                 
             </UniformGrid>

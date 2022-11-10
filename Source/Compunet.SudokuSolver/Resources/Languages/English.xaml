@@ -1,0 +1,32 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:system="clr-namespace:System;assembly=netstandard">
+
+    <FlowDirection x:Key="MainFlowDirection">LeftToRight</FlowDirection>
+    <FlowDirection x:Key="DiffFlowDirection">RightToLeft</FlowDirection>
+
+    <system:String x:Key="SolutionTrySolve">Tty solve it</system:String>
+    <system:String x:Key="SolutionSolving">Solving...</system:String>
+    <system:String x:Key="SolutionSucceeded">Succeeded</system:String>
+    <system:String x:Key="SolutionFailed">Opps.. something problematic</system:String>
+
+
+    <system:String x:Key="UndoToolTip">Undo</system:String>
+    <system:String x:Key="RedoToolTip">Redo</system:String>
+    <system:String x:Key="ResetBoardToolTip">Reset the board</system:String>
+
+    <system:String x:Key="AppWindowTitle">Sudoku</system:String>
+
+    <system:String x:Key="ChangeThemeToolTip">Change theme</system:String>
+    <system:String x:Key="ChangeLangToolTip">Change Language</system:String>
+    <system:String x:Key="CompressWindowToolTip">Compress</system:String>
+    <system:String x:Key="CreateSudokuPuzzleToolTip">Create a sudoku puzzle</system:String>
+    <system:String x:Key="SubmitFeedbackToolTip">Submit feedback</system:String>
+
+    <system:String x:Key="GenerateSudokuPuzzleTitle">Generate sudoku puzzle</system:String>
+    <system:String x:Key="SelectPuzzleLevelHeader">Choose the difficulty level:</system:String>
+    <system:String x:Key="PuzzleEasyLevel">Easy</system:String>
+    <system:String x:Key="PuzzleMediumLevel">Medium</system:String>
+    <system:String x:Key="PuzzleHardLevel">Hard</system:String>
+
+</ResourceDictionary>

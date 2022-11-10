@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Compunet.SudokuSolver.Mvvm
+namespace Compunet.SudokuSolver.Mvvm.Base
 {
     public abstract class BindableBase : INotifyPropertyChanged
     {

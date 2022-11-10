@@ -1,5 +1,7 @@
-﻿using Compunet.SudokuSolver.Core;
+﻿using Compunet.SudokuSolver.Application;
+using Compunet.SudokuSolver.Core;
 using Compunet.SudokuSolver.Extensions.Reactive;
+using Compunet.SudokuSolver.Mvvm.Base;
 using Compunet.SudokuSolver.Mvvm.Commands;
 using Compunet.SudokuSolver.Services;
 using System;
@@ -31,7 +33,7 @@ namespace Compunet.SudokuSolver.Mvvm
 
         public RxCommand<Key> KeyDownCommand { get; set; } = new();
 
-        public SudokuViewModel(ISudokuStoreService sudokuStore, ISudokuInputService inputService)
+        public SudokuViewModel(ISudokuStoreService sudokuStore, ISudokuInputService inputService, IApplicationResourceManager resManager)
         {
             mInput = inputService;
             mStore = sudokuStore;
@@ -44,14 +46,7 @@ namespace Compunet.SudokuSolver.Mvvm
             CanReset = mStore.CanReset.ToBindable();
             CanSolve = mStore.CanSolve.ToBindable();
 
-            SolveButtonText = mStore.StoreStatus.Select(status => status switch
-            {
-                SolutionStatus.Solving => "פותר...",
-                SolutionStatus.FailedOrTimeout => "אופס... משהו בעייתי בלוח הזה",
-                SolutionStatus.Completed => "הצליח",
-                SolutionStatus.Default => "נסה לפתור את זה",
-                _ => "???"
-            }).ToBindable();
+            SolveButtonText = CreateSolveButtonTextObservable(resManager).ToBindable();
 
             KeyDownCommand.Subscribe(onNext: key =>
             {
@@ -70,6 +65,27 @@ namespace Compunet.SudokuSolver.Mvvm
             RedoCommand.Subscribe(mStore.DispatchRedo);
             ResetCommand.Subscribe(mStore.DispatchReset);
             SolveCommand.Subscribe(mStore.DispatchTrySolve);
+        }
+
+        private IObservable<string> CreateSolveButtonTextObservable(IApplicationResourceManager resManager)
+        {
+            var appLanguageObservable = Observable.FromEvent<string>(action => resManager.LanguageChanged += action,
+                                                                     action => resManager.LanguageChanged -= action);
+
+            var textResourceKeyObservable = mStore.StoreStatus.Select(status => status switch
+            {
+                SolutionStatus.Solving => ApplicationConstants.SolutionSolving,
+                SolutionStatus.FailedOrTimeout => ApplicationConstants.SolutionFailed,
+                SolutionStatus.Completed => ApplicationConstants.SolutionSucceeded,
+                SolutionStatus.Default => ApplicationConstants.SolutionTrySolve,
+                _ => throw new ApplicationException("unexpected SolutionStatus")
+            });
+
+            var latest = Observable.CombineLatest(appLanguageObservable.StartWith(string.Empty),
+                                                  textResourceKeyObservable,
+                                                  resultSelector: (_, key) => resManager.GetStringResource(key));
+
+            return latest;
         }
     }
 }

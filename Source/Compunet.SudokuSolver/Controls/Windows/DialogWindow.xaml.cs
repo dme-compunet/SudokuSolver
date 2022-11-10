@@ -7,7 +7,7 @@ namespace Compunet.SudokuSolver.Controls
         public DialogWindow()
         {
             InitializeComponent();
-            var appWindow = Application.Current.MainWindow;
+            var appWindow = System.Windows.Application.Current.MainWindow;
             Owner = appWindow;
 
             Loaded += (_, _) => WindowChrome.SetOverlayMode(appWindow, true);

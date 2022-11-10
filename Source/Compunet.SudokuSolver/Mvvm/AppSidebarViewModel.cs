@@ -1,4 +1,6 @@
-﻿using Compunet.SudokuSolver.Extensions.Reactive;
+﻿using Compunet.SudokuSolver.Application;
+using Compunet.SudokuSolver.Extensions.Reactive;
+using Compunet.SudokuSolver.Mvvm.Base;
 using Compunet.SudokuSolver.Mvvm.Commands;
 using Compunet.SudokuSolver.Services;
 using System;
@@ -12,9 +14,10 @@ namespace Compunet.SudokuSolver.Mvvm
 
         public IRxCommand<Window> CompressCommand { get; set; } = new RxCommand<Window>();
         public IRxCommand NextThemeCommand { get; set; } = new RxCommand();
+        public IRxCommand NextLangCommand { get; set; } = new RxCommand();
         public IRxCommand CreatePuzzleCommand { get; set; } = new RxCommand();
 
-        public AppSidebarViewModel(ISudokuStoreService store, IThemeService theme, ICreatePuzzleDialogService puzzleDialog)
+        public AppSidebarViewModel(ISudokuStoreService store, IApplicationResourceManager manager, ICreatePuzzleDialogService puzzleDialog)
         {
             IsBusy = store.IsBusy.ToBindable();
 
@@ -24,7 +27,9 @@ namespace Compunet.SudokuSolver.Mvvm
                 window.Width = window.MinWidth;
             });
 
-            NextThemeCommand.Subscribe(async () => await theme.NextTheme());
+            //NextThemeCommand.Subscribe(async () => await theme.NextTheme());
+            NextThemeCommand.Subscribe(async () => await manager.NextTheme());
+            NextLangCommand.Subscribe(async () => await manager.NextLanguage());
 
             CreatePuzzleCommand.Subscribe(() =>
             {

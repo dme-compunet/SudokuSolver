@@ -5,13 +5,14 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Theming/Themes/LightTheme.xaml"/>
-                <ResourceDictionary Source="/Theming/Fonts.xaml"/>
-                <ResourceDictionary Source="/Theming/Icons.xaml"/>
-                <ResourceDictionary Source="/Theming/ToolTip.xaml"/>
-                <ResourceDictionary Source="/Theming/TextBox.xaml"/>
-                <ResourceDictionary Source="/Theming/Buttons.xaml"/>
-                <ResourceDictionary Source="/Theming/Windows.xaml"/>
+                <ResourceDictionary Source="/Resources/Themes/LightTheme.xaml"/>
+                <ResourceDictionary Source="/Resources/Languages/Hebrew.xaml"/>
+                <ResourceDictionary Source="/Resources/Fonts.xaml"/>
+                <ResourceDictionary Source="/Resources/Icons.xaml"/>
+                <ResourceDictionary Source="/Resources/ToolTip.xaml"/>
+                <ResourceDictionary Source="/Resources/TextBox.xaml"/>
+                <ResourceDictionary Source="/Resources/Buttons.xaml"/>
+                <ResourceDictionary Source="/Resources/Windows.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

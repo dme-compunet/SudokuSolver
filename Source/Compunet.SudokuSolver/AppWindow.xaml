@@ -4,26 +4,19 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:local="clr-namespace:Compunet.SudokuSolver"
     mc:Ignorable="d"
     xmlns:controls="clr-namespace:Compunet.SudokuSolver.Controls"
     xmlns:views="clr-namespace:Compunet.SudokuSolver.Views"
-    xmlns:converters="clr-namespace:Compunet.SudokuSolver.Mvvm.Converters" 
-    xmlns:mvvm="clr-namespace:Compunet.SudokuSolver.Mvvm" 
-    xmlns:wpf="clr-namespace:Compunet.SudokuSolver.Windows" 
-    xmlns:b="http://schemas.microsoft.com/xaml/behaviors" 
-    xmlns:behavior="clr-namespace:Compunet.SudokuSolver.Behaviors" 
-    d:DataContext="{d:DesignInstance Type=mvvm:AppWindowViewModel}"
     WindowState="Maximized"
-    FlowDirection="RightToLeft"
+    FlowDirection="{DynamicResource MainFlowDirection}"
     Style="{StaticResource ThemeWindow}"
     MinHeight="700"
     MinWidth="{Binding ElementName=BoardControl, Path=ActualWidth}"
-    Title="סודוקו" Height="450" Width="1000">
+    Title="{DynamicResource AppWindowTitle}" Height="450" Width="1000">
 
     <Grid>
 
-        <Grid Name="RootContent">
+        <Grid>
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition x:Name="SidebarArea" Width="1*"/>
@@ -37,8 +30,7 @@
 
             </Grid>
 
-            <Grid Grid.Column="1" 
-                            Name="BoardControl">
+            <Grid Grid.Column="1" Name="BoardControl">
 
                 <Viewbox>
 
@@ -50,19 +42,6 @@
 
             </Grid>
 
-            <!--<Grid>
-
-                <controls:SubmitFeedbackPopupControl x:Name="SubmitFeedbackPopup"/>
-
-            </Grid>-->
-
-        </Grid>
-
-        <Grid>
-            <Border Name="OverlayBorder" 
-                    Background="Black" 
-                    Opacity="0"
-                    Visibility="Collapsed"/>
         </Grid>
 
     </Grid>

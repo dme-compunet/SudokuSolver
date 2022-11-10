@@ -1,0 +1,35 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:system="clr-namespace:System;assembly=netstandard">
+
+    <FlowDirection x:Key="MainFlowDirection">RightToLeft</FlowDirection>
+    <FlowDirection x:Key="DiffFlowDirection">LeftToRight</FlowDirection>
+
+
+    <system:String x:Key="SolutionTrySolve">נסה לפתור את זה</system:String>
+    <system:String x:Key="SolutionSolving">פותר...</system:String>
+    <system:String x:Key="SolutionSucceeded">הצליח</system:String>
+    <system:String x:Key="SolutionFailed">אופס... משהו בעייתי בלוח הזה</system:String>
+
+
+    <system:String x:Key="UndoToolTip">בטל את הפעולה האחרונה</system:String>
+    <system:String x:Key="RedoToolTip">חזור על הביטול האחרון</system:String>
+    <system:String x:Key="ResetBoardToolTip">אפס את הלוח</system:String>
+    
+    <system:String x:Key="AppWindowTitle">סודוקו</system:String>
+    
+    <system:String x:Key="ChangeThemeToolTip">החלף ערכת נושא</system:String>
+    <system:String x:Key="ChangeLangToolTip">החלף שפה</system:String>
+    <system:String x:Key="CompressWindowToolTip">צמצם</system:String>
+    <system:String x:Key="CreateSudokuPuzzleToolTip">צור חידת סודוקו</system:String>
+    <system:String x:Key="SubmitFeedbackToolTip">שלח משוב</system:String>
+
+    <system:String x:Key="GenerateSudokuPuzzleTitle">חולל חידת סודוקו</system:String>
+    <system:String x:Key="SelectPuzzleLevelHeader">בחר את רמת הקושי:</system:String>
+    <system:String x:Key="PuzzleEasyLevel">קל</system:String>
+    <system:String x:Key="PuzzleMediumLevel">בינוני</system:String>
+    <system:String x:Key="PuzzleHardLevel">קשה</system:String>
+    
+    
+    
+</ResourceDictionary>

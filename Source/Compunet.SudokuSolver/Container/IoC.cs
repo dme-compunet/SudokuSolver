@@ -8,7 +8,7 @@ namespace Compunet.SudokuSolver.Container
     {
         private static IoC? mDefault;
 
-        public static IoC Simple => mDefault ?? throw new InvalidOperationException("the 'Simple' container is not builded");
+        public static IoC Simple => mDefault ?? throw new InvalidOperationException("the 'Simple' container is not created");
 
         public IoC(IServiceProvider? parentProvider) : base(parentProvider) { }
 

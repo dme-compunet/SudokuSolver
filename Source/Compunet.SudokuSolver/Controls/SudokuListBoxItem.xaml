@@ -31,7 +31,7 @@
                            Text="{TemplateBinding ValueText}" 
                            FontSize="30"
                            FontFamily="{StaticResource UIFont}"
-                           Foreground="{DynamicResource Primary800}"
+                           Foreground="{DynamicResource Primary900}"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center"/>
                 

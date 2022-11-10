@@ -11,7 +11,7 @@
              xmlns:behavior="clr-namespace:Compunet.SudokuSolver.Behaviors" 
              d:DataContext="{d:DesignInstance Type=mvvm:SudokuViewModel}"
              mc:Ignorable="d" 
-             FlowDirection="RightToLeft">
+             d:FlowDirection="{DynamicResource MainFlowDirection}">
 
     <UserControl.InputBindings>
         <wpf:UndoKeyBinding Command="{Binding UndoCommand}"/>
@@ -39,8 +39,23 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
+            <!--<Button Style="{StaticResource ThemePrimaryBubbleRaisedButton}"
+                    FontSize="19"
+                    Padding="10"
+                    Grid.Column="0"
+                    IsEnabled="{Binding CanSolve.Value}"
+                    Command="{Binding SolveCommand}">
+                <TextBlock>
+                    <Run Text="{DynamicResource SolutionTrySolve}"/>
+                    <Run Text="{DynamicResource SolutionSolving}"/>
+                    <Run Text="{DynamicResource SolutionSucceeded}"/>
+                    <Run Text="{DynamicResource SolutionFailed}"/>
+                    <Run Text="{Binding SolveButtonText.Value}"/>
+                </TextBlock>
+            </Button>-->
+
             <Button Style="{StaticResource ThemePrimaryBubbleRaisedButton}"
-                    FontSize="20"
+                    FontSize="19"
                     Padding="10"
                     Grid.Column="0"
                     IsEnabled="{Binding CanSolve.Value}"
@@ -50,18 +65,18 @@
             <Button Style="{StaticResource ThemePrimaryBubbleIconButton}"
                     IsEnabled="{Binding CanUndo.Value}"
                     Command="{Binding UndoCommand}"
-                    ToolTip="בטל את הפעולה האחרונה"
+                    ToolTip="{DynamicResource UndoToolTip}"
                     Padding="12"
-                    ContentTemplate="{StaticResource UndoIcon}"
+                    ContentTemplate="{DynamicResource UndoIcon}"
                     Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"
                     Grid.Column="2"/>
 
             <Button Style="{StaticResource ThemePrimaryBubbleIconButton}"
                     IsEnabled="{Binding CanRedo.Value}"
                     Command="{Binding RedoCommand}"
-                    ToolTip="חזור על הביטול האחרון"
+                    ToolTip="{DynamicResource RedoToolTip}"
                     Padding="12"
-                    ContentTemplate="{StaticResource RedoIcon}"
+                    ContentTemplate="{DynamicResource RedoIcon}"
                     Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"
                     Grid.Column="4"/>
 
@@ -69,8 +84,8 @@
                     IsEnabled="{Binding CanReset.Value}"
                     Command="{Binding ResetCommand}"
                     Padding="12"
-                    ToolTip="אפס את הלוח"
-                    ContentTemplate="{StaticResource ResetIcon}"
+                    ToolTip="{DynamicResource ResetBoardToolTip}"
+                    ContentTemplate="{DynamicResource ResetIcon}"
                     Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"
                     Grid.Column="6"/>
 
@@ -92,8 +107,8 @@
 
 
             <controls:SudokuListBox SelectedIndex="{Binding SelectedIndex}"
-                                  Board="{Binding Board.Value}"
-                                  CornerRadius="15">
+                                    Board="{Binding Board.Value}"
+                                    CornerRadius="15">
                 <b:Interaction.Behaviors>
                     <behavior:InvokeCommandOnKeyDownBehavior Command="{Binding KeyDownCommand}"/>
                 </b:Interaction.Behaviors>

@@ -3,28 +3,42 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Compunet.SudokuSolver.Views" xmlns:converters="clr-namespace:Compunet.SudokuSolver.Mvvm.Converters"
+             xmlns:local="clr-namespace:Compunet.SudokuSolver.Views" 
+             xmlns:converters="clr-namespace:Compunet.SudokuSolver.Mvvm.Converters" 
+             xmlns:mvvm="clr-namespace:Compunet.SudokuSolver.Mvvm" 
+             d:DataContext="{d:DesignInstance Type=mvvm:AppSidebarViewModel}"
              mc:Ignorable="d" 
              Width="60"
              Margin="10"
-             FlowDirection="RightToLeft"
+             FlowDirection="{DynamicResource MainFlowDirection}"
              d:DesignHeight="600">
+    
     <Grid>
         <DockPanel LastChildFill="False">
 
             <StackPanel DockPanel.Dock="Top">
 
-                <Button ContentTemplate="{StaticResource ThemeIcon}"
+                <Button ContentTemplate="{DynamicResource ThemeIcon}"
                         VerticalContentAlignment="Center"
                         HorizontalContentAlignment="Center"
-                        ToolTip="החלף ערכת נושא"
+                        ToolTip="{DynamicResource ChangeThemeToolTip}"
                         Padding="13"
                         VerticalAlignment="Top"
                         Command="{Binding NextThemeCommand}"
                         Style="{StaticResource ThemePrimaryBubbleIconButton}"/>
 
-                <Button ContentTemplate="{StaticResource CompressIcon}"
-                        ToolTip="צמצם"
+                <Button ContentTemplate="{DynamicResource LanguageIcon}"
+                        ToolTip="{DynamicResource ChangeLangToolTip}"
+                        Margin="0 10 0 0"
+                        VerticalContentAlignment="Center"
+                        HorizontalContentAlignment="Center"
+                        Padding="13"
+                        Command="{Binding NextLangCommand}"
+                        VerticalAlignment="Top"
+                        Style="{StaticResource ThemePrimaryBubbleIconButton}"/>
+
+                <Button ContentTemplate="{DynamicResource CompressIcon}"
+                        ToolTip="{DynamicResource CompressWindowToolTip}"
                         Margin="0 10 0 0"
                         VerticalContentAlignment="Center"
                         HorizontalContentAlignment="Center"
@@ -34,8 +48,8 @@
                         VerticalAlignment="Top"
                         Style="{StaticResource ThemePrimaryBubbleIconButton}"/>
 
-                <Button ContentTemplate="{StaticResource PuzzledImage}"
-                        ToolTip="צור חידת סודוקו"
+                <Button ContentTemplate="{DynamicResource PuzzledImage}"
+                        ToolTip="{DynamicResource CreateSudokuPuzzleToolTip}"
                         Margin="0 10 0 0"
                         VerticalContentAlignment="Center"
                         HorizontalContentAlignment="Center"
@@ -51,14 +65,14 @@
                   VerticalAlignment="Bottom">
                 
                 <Grid>
-                    
-                    <Button ContentTemplate="{StaticResource SmilingFaceWithHeartImage}"
-                                ToolTip="שלח משוב"
-                                VerticalContentAlignment="Center"
-                                HorizontalContentAlignment="Center"
-                                Padding="13"
-                                VerticalAlignment="Top"
-                                Style="{StaticResource ThemePrimaryBubbleIconButton}"/>
+
+                    <Button ContentTemplate="{DynamicResource SmilingFaceWithHeartImage}"
+                            ToolTip="{DynamicResource SubmitFeedbackToolTip}"
+                            VerticalContentAlignment="Center"
+                            HorizontalContentAlignment="Center"
+                            Padding="13"
+                            VerticalAlignment="Top"
+                            Style="{StaticResource ThemePrimaryBubbleIconButton}"/>
                 
                 </Grid>
                 
@@ -70,4 +84,5 @@
 
         </DockPanel>
     </Grid>
+    
 </UserControl>

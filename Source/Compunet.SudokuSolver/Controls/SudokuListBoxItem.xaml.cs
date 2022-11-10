@@ -24,8 +24,6 @@ namespace Compunet.SudokuSolver.Controls
                                         typeof(SudokuListBoxItem),
                                         new PropertyMetadata(false));
 
-        //private SudokuCellPosition position;
-
         public Value Value
         {
             get => (Value)GetValue(ValueProperty);
@@ -48,11 +46,11 @@ namespace Compunet.SudokuSolver.Controls
         {
             InitializeComponent();
 
-            SetResourceReference(BackgroundProperty, cell.Index % 2 == 1 ? "Primary200" : "Primary100");
+            //SetResourceReference(BackgroundProperty, cell.Index % 2 == 1 ? "Primary200" : "Primary100");
+            SetResourceReference(BackgroundProperty, cell.Index % 2 == 1 ? "Primary100" : "Primary50");
 
             Canvas.SetTop(this, cell.Row * 50.0);
             Canvas.SetLeft(this, cell.Column * 50.0);
-
         }
 
         private static void OnValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)

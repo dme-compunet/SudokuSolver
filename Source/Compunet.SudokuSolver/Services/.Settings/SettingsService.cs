@@ -10,10 +10,11 @@ namespace Compunet.SudokuSolver.Services
     public class SettingsService : ISettingsService
     {
         private const char separator = ':';
-        private readonly string filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "compunet.sudokusolver");
+        private readonly string filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "compunet.sudokusolver.settings");
 
-        public int ActivatedTheme { get; set; }
         public string? SudokuBoard { get; set; }
+        public string? CurrentTheme { get; set; }
+        public string? CurrentLanguage { get; set; }
 
         public Task Save()
         {

@@ -28,20 +28,20 @@
 
                     <!-- Grid Lines -->
                     <Canvas>
-                        <Border Background="{DynamicResource Primary500}"
+                        <Border Background="{DynamicResource Primary400}"
                                 Canvas.Top="150"
                                 Width="450"
                                 Height="1.5"/>
-                        <Border Background="{DynamicResource Primary500}"
+                        <Border Background="{DynamicResource Primary400}"
                                 Canvas.Top="300"
                                 Width="450"
                                 Height="1.5"/>
 
-                        <Border Background="{DynamicResource Primary500}"
+                        <Border Background="{DynamicResource Primary400}"
                                 Canvas.Left="150"
                                 Width="1.5"
                                 Height="450"/>
-                        <Border Background="{DynamicResource Primary500}"
+                        <Border Background="{DynamicResource Primary400}"
                                 Canvas.Left="300"
                                 Width="1.5"
                                 Height="450"/>

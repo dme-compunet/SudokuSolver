@@ -6,7 +6,7 @@
                 xmlns:local="clr-namespace:Compunet.SudokuSolver.Controls"
                 mc:Ignorable="d" 
                 Focusable="False"
-                FlowDirection="RightToLeft"
+                FlowDirection="{DynamicResource MainFlowDirection}"
                 Height="300" Width="500">
     
     <Grid Margin="10">

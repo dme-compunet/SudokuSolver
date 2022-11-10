@@ -1,0 +1,323 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <DataTemplate x:Key="LanguageIcon">
+        <Image>
+            <Image.Source>
+                <DrawingImage>
+                    <DrawingImage.Drawing>
+                        <DrawingGroup>
+                            <DrawingGroup.Children>
+                                <DrawingGroup>
+                                    <DrawingGroup.Children>
+                                        <GeometryDrawing Brush="{Binding (TextElement.Foreground), RelativeSource={RelativeSource TemplatedParent}}" Pen="{x:Null}">
+                                            <GeometryDrawing.Geometry>
+                                                <PathGeometry FillRule="Nonzero" Figures="M24,3.9980469C12.972292,3.9980469 4,12.970339 4,23.998047 4,27.273363 4.8627078,30.334853 6.2617188,33.064453L4.09375,40.826172C3.5887973,42.629575,5.3719261,44.41261,7.1757812,43.908203L14.943359,41.740234C17.670736,43.136312 20.727751,43.998047 24,43.998047 35.027708,43.998047 44,35.025755 44,23.998047 44,12.970339 35.027708,3.9980469 24,3.9980469z M24,6.9980469C33.406292,6.9980469 41,14.591755 41,23.998047 41,33.404339 33.406292,40.998047 24,40.998047 20.998416,40.998047 18.190601,40.217527 15.742188,38.853516A1.50015,1.50015,0,0,0,14.609375,38.71875L7.2226562,40.779297 9.2851562,33.396484A1.50015,1.50015,0,0,0,9.1503906,32.261719C7.7836522,29.811523 7,27.002565 7,23.998047 7,14.591755 14.593708,6.9980469 24,6.9980469z M31.476562,12.978516A1.50015,1.50015,0,0,0,30,14.5L30,19.253906A1.50015,1.50015,0,0,0,30,19.740234L30,27.5A1.50015,1.50015,0,1,0,33,27.5L33,21 34.5,21A1.50015,1.50015,0,1,0,34.5,18L33,18 33,14.5A1.50015,1.50015,0,0,0,31.476562,12.978516z M20.5,13A1.50015,1.50015,0,1,0,20.5,16L25,16 25,17C25,18.252496,24.435381,19.35069,23.544922,20.085938A1.500449,1.500449,0,1,0,25.455078,22.400391C27.008619,21.117638,28,19.163504,28,17L28,14.5A1.50015,1.50015,0,0,0,26.5,13L20.5,13z M18.505859,18A1.50015,1.50015,0,0,0,17.099609,18.960938L12.099609,31.960938A1.5005608,1.5005608,0,1,0,14.900391,33.039062L16.068359,30 20.931641,30 22.099609,33.039062A1.5005608,1.5005608,0,1,0,24.900391,31.960938L19.900391,18.960938A1.50015,1.50015,0,0,0,18.505859,18z M18.5,23.679688L19.777344,27 17.222656,27 18.5,23.679688z" />
+                                            </GeometryDrawing.Geometry>
+                                        </GeometryDrawing>
+                                    </DrawingGroup.Children>
+                                    <DrawingGroup.ClipGeometry>
+                                        <RectangleGeometry Rect="0,0,48,48" />
+                                    </DrawingGroup.ClipGeometry>
+                                </DrawingGroup>
+                            </DrawingGroup.Children>
+                        </DrawingGroup>
+                    </DrawingImage.Drawing>
+                </DrawingImage>
+            </Image.Source>
+        </Image>        
+    </DataTemplate>
+
+    <DataTemplate x:Key="ThemeIcon">
+        <Image>
+            <Image.Source>
+                <DrawingImage>
+                    <DrawingImage.Drawing>
+                        <DrawingGroup>
+                            <DrawingGroup.Children>
+                                <DrawingGroup>
+                                    <DrawingGroup.Children>
+                                        <GeometryDrawing Brush="{Binding (TextElement.Foreground), RelativeSource={RelativeSource TemplatedParent}}" Pen="{x:Null}">
+                                            <GeometryDrawing.Geometry>
+                                                <PathGeometry FillRule="Nonzero" Figures="M10.5,6C10.3105,6 10.124082,6.0104805 9.9394531,6.0292969 9.571481,6.0667987 9.2141905,6.1413291 8.8710938,6.2480469 7.1472189,6.7842455 5.7842455,8.1472189 5.2480469,9.8710938 5.1413291,10.21419 5.0667987,10.571481 5.0292969,10.939453 5.0292305,10.940097 5.0293631,10.940762 5.0292969,10.941406 5.0106094,11.125412 5,11.311158 5,11.5L5,13.5 5,36.5C5,39.519774,7.4802259,42,10.5,42L37.5,42C40.519774,42,43,39.519774,43,36.5L43,13.5 43,11.5C43,11.310603 42.989737,11.124126 42.970703,10.939453 42.933201,10.571481 42.858671,10.21419 42.751953,9.8710938 42.215754,8.1472189 40.852781,6.7842455 39.128906,6.2480469 38.78581,6.1413291 38.428519,6.0667987 38.060547,6.0292969 38.059905,6.0292315 38.059235,6.029362 38.058594,6.0292969 37.874547,6.0103939 37.688736,6 37.5,6L10.5,6z M10.5,9C11.328,9 12,9.672 12,10.5 12,11.328 11.328,12 10.5,12 9.672,12 9,11.328 9,10.5 9,9.672 9.672,9 10.5,9z M15.5,9C16.328,9 17,9.672 17,10.5 17,11.328 16.328,12 15.5,12 14.672,12 14,11.328 14,10.5 14,9.672 14.672,9 15.5,9z M21.5,9L37.5,9C38.328,9 39,9.672 39,10.5 39,11.328 38.328,12 37.5,12L21.5,12C20.672,12 20,11.328 20,10.5 20,9.672 20.672,9 21.5,9z M8,15L40,15 40,32.945312 32.990234,26.140625A1.50015,1.50015,0,0,0,32.986328,26.136719C32.208181,25.38535 31.18685,25 30.173828,25 29.16122,25 28.13988,25.385387 27.361328,26.138672L25.3125,28.121094 19.132812,22.142578C18.35636,21.389748 17.336076,21 16.318359,21 15.299078,21 14.280986,21.392173 13.505859,22.140625A1.50015,1.50015,0,0,0,13.501953,22.144531L8,27.490234 8,15z M29,18A2,2,0,0,0,29,22A2,2,0,0,0,29,18z M16.318359,24C16.578643,24,16.835328,24.09366,17.044922,24.296875A1.50015,1.50015,0,0,0,17.046875,24.298828L23.154297,30.207031 14.064453,39 10.5,39C9.1017741,39,8,37.898226,8,36.5L8,31.671875 15.591797,24.294922 15.589844,24.298828C15.802758,24.093293,16.059641,24,16.318359,24z M30.173828,28C30.438806,28,30.692485,28.09229,30.902344,28.294922L39.933594,37.0625C39.683303,38.182061,38.703903,39,37.5,39L18.380859,39 29.447266,28.294922C29.654714,28.094207,29.910436,28,30.173828,28z" />
+                                            </GeometryDrawing.Geometry>
+                                        </GeometryDrawing>
+                                    </DrawingGroup.Children>
+                                    <DrawingGroup.ClipGeometry>
+                                        <RectangleGeometry Rect="0,0,48,48" />
+                                    </DrawingGroup.ClipGeometry>
+                                </DrawingGroup>
+                            </DrawingGroup.Children>
+                        </DrawingGroup>
+                    </DrawingImage.Drawing>
+                </DrawingImage>
+
+            </Image.Source>
+        </Image>
+    </DataTemplate>
+
+    <DataTemplate x:Key="CompressIcon">
+        <Image>
+            <Image.Source>
+                <DrawingImage>
+                    <DrawingImage.Drawing>
+                        <DrawingGroup>
+                            <DrawingGroup.Children>
+                                <DrawingGroup>
+                                    <DrawingGroup.Children>
+                                        <GeometryDrawing Brush="{Binding (TextElement.Foreground), RelativeSource={RelativeSource TemplatedParent}}" Pen="{x:Null}">
+                                            <GeometryDrawing.Geometry>
+                                                <PathGeometry FillRule="Nonzero" Figures="M42.470703,3.9863281A1.50015,1.50015,0,0,0,41.439453,4.4394531L29,16.878906 29,6.5A1.50015,1.50015,0,0,0,27.476562,4.9785156A1.50015,1.50015,0,0,0,26,6.5L26,20.5A1.50015,1.50015,0,0,0,27.5,22L41.5,22A1.50015,1.50015,0,1,0,41.5,19L31.121094,19 43.560547,6.5605469A1.50015,1.50015,0,0,0,42.470703,3.9863281z M20.470703,25.986328A1.50015,1.50015,0,0,0,20.310547,26L6.5,26A1.50015,1.50015,0,1,0,6.5,29L16.878906,29 4.4394531,41.439453A1.50015,1.50015,0,1,0,6.5605469,43.560547L19,31.121094 19,41.5A1.50015,1.50015,0,1,0,22,41.5L22,27.673828A1.50015,1.50015,0,0,0,20.470703,25.986328z" />
+                                            </GeometryDrawing.Geometry>
+                                        </GeometryDrawing>
+                                    </DrawingGroup.Children>
+                                    <DrawingGroup.ClipGeometry>
+                                        <RectangleGeometry Rect="0,0,48,48" />
+                                    </DrawingGroup.ClipGeometry>
+                                </DrawingGroup>
+                            </DrawingGroup.Children>
+                        </DrawingGroup>
+                    </DrawingImage.Drawing>
+                </DrawingImage>
+
+            </Image.Source>
+        </Image>
+    </DataTemplate>
+
+    <DataTemplate x:Key="UndoIcon">
+        <Image FlowDirection="{DynamicResource DiffFlowDirection}">
+            <Image.Source>
+                <DrawingImage>
+                    <DrawingImage.Drawing>
+                        <DrawingGroup>
+                            <DrawingGroup.Children>
+                                <DrawingGroup>
+                                    <DrawingGroup.Children>
+                                        <GeometryDrawing Brush="{Binding (TextElement.Foreground), RelativeSource={RelativeSource TemplatedParent}}" Pen="{x:Null}">
+                                            <GeometryDrawing.Geometry>
+                                                <PathGeometry FillRule="Nonzero" Figures="M19.814453,6.0097656C16.531949,6.0097656 13.249558,7.2582543 10.753906,9.7539062 5.7626026,14.74521 5.7626027,22.883696 10.753906,27.875L25.439453,42.560547A1.50015,1.50015,0,1,0,27.560547,40.439453L12.875,25.753906C9.0303039,21.90921 9.0303039,15.719696 12.875,11.875 16.719696,8.0303039 22.90921,8.0303039 26.753906,11.875L35.878906,21 25.5,21A1.50015,1.50015,0,1,0,25.5,24L39.277344,24A1.50015,1.50015,0,0,0,41,22.279297L41,8.5A1.50015,1.50015,0,0,0,39.476562,6.9785156A1.50015,1.50015,0,0,0,38,8.5L38,18.878906 28.875,9.7539062C26.379348,7.2582544,23.096957,6.0097656,19.814453,6.0097656z" />
+                                            </GeometryDrawing.Geometry>
+                                        </GeometryDrawing>
+                                    </DrawingGroup.Children>
+                                    <DrawingGroup.ClipGeometry>
+                                        <RectangleGeometry Rect="0,0,48,48" />
+                                    </DrawingGroup.ClipGeometry>
+                                </DrawingGroup>
+                            </DrawingGroup.Children>
+                        </DrawingGroup>
+                    </DrawingImage.Drawing>
+                </DrawingImage>
+            </Image.Source>
+        </Image>
+    </DataTemplate>
+
+    <DataTemplate x:Key="RedoIcon">
+        <Image FlowDirection="{DynamicResource MainFlowDirection}">
+            <Image.Source>
+                <DrawingImage>
+                    <DrawingImage.Drawing>
+                        <DrawingGroup>
+                            <DrawingGroup.Children>
+                                <DrawingGroup>
+                                    <DrawingGroup.Children>
+                                        <GeometryDrawing Brush="{Binding (TextElement.Foreground), RelativeSource={RelativeSource TemplatedParent}}" Pen="{x:Null}">
+                                            <GeometryDrawing.Geometry>
+                                                <PathGeometry FillRule="Nonzero" Figures="M19.814453,6.0097656C16.531949,6.0097656 13.249558,7.2582543 10.753906,9.7539062 5.7626026,14.74521 5.7626027,22.883696 10.753906,27.875L25.439453,42.560547A1.50015,1.50015,0,1,0,27.560547,40.439453L12.875,25.753906C9.0303039,21.90921 9.0303039,15.719696 12.875,11.875 16.719696,8.0303039 22.90921,8.0303039 26.753906,11.875L35.878906,21 25.5,21A1.50015,1.50015,0,1,0,25.5,24L39.277344,24A1.50015,1.50015,0,0,0,41,22.279297L41,8.5A1.50015,1.50015,0,0,0,39.476562,6.9785156A1.50015,1.50015,0,0,0,38,8.5L38,18.878906 28.875,9.7539062C26.379348,7.2582544,23.096957,6.0097656,19.814453,6.0097656z" />
+                                            </GeometryDrawing.Geometry>
+                                        </GeometryDrawing>
+                                    </DrawingGroup.Children>
+                                    <DrawingGroup.ClipGeometry>
+                                        <RectangleGeometry Rect="0,0,48,48" />
+                                    </DrawingGroup.ClipGeometry>
+                                </DrawingGroup>
+                            </DrawingGroup.Children>
+                        </DrawingGroup>
+                    </DrawingImage.Drawing>
+                </DrawingImage>
+            </Image.Source>
+        </Image>
+    </DataTemplate>
+
+    <DataTemplate x:Key="ResetIcon">
+        <Image>
+            <Image.Source>
+                <DrawingImage>
+                    <DrawingImage.Drawing>
+                        <DrawingGroup>
+                            <DrawingGroup.Children>
+                                <DrawingGroup>
+                                    <DrawingGroup.Children>
+                                        <GeometryDrawing Brush="{Binding (TextElement.Foreground), RelativeSource={RelativeSource TemplatedParent}}" Pen="{x:Null}">
+                                            <GeometryDrawing.Geometry>
+                                                <PathGeometry FillRule="Nonzero" Figures="M37.476562,5.9785156A1.50015,1.50015,0,0,0,36,7.5L36,10.605469C32.815876,7.7471496 28.609324,6 24,6 14.0764,6 6,14.0764 6,24 6,33.9236 14.0764,42 24,42 33.9236,42 42,33.9236 42,24 42,23.048235 41.90482,22.141037 41.773438,21.275391A1.50015,1.50015,0,1,0,38.808594,21.724609C38.925211,22.492963 39,23.247765 39,24 39,32.3024 32.3024,39 24,39 15.6976,39 9,32.3024 9,24 9,15.6976 15.6976,9 24,9 27.934257,9 31.480462,10.527501 34.150391,13L30.5,13A1.50015,1.50015,0,1,0,30.5,16L37.5,16A1.50015,1.50015,0,0,0,39,14.5L39,7.5A1.50015,1.50015,0,0,0,37.476562,5.9785156z" />
+                                            </GeometryDrawing.Geometry>
+                                        </GeometryDrawing>
+                                    </DrawingGroup.Children>
+                                    <DrawingGroup.ClipGeometry>
+                                        <RectangleGeometry Rect="0,0,48,48" />
+                                    </DrawingGroup.ClipGeometry>
+                                </DrawingGroup>
+                            </DrawingGroup.Children>
+                        </DrawingGroup>
+                    </DrawingImage.Drawing>
+                </DrawingImage>
+            </Image.Source>
+        </Image>
+    </DataTemplate>
+    
+    
+
+    <DataTemplate x:Key="CloseIcon">
+        <Viewbox>
+            <Path FlowDirection="{DynamicResource DiffFlowDirection}"
+                  Margin="0 -6 -6 0"
+                  Data="M39.486328,6.9785156A1.50015,1.50015,0,0,0,38.439453,7.4394531L24,21.878906 9.5605469,7.4394531A1.50015,1.50015,0,0,0,8.484375,6.984375A1.50015,1.50015,0,0,0,7.4394531,9.5605469L21.878906,24 7.4394531,38.439453A1.50015,1.50015,0,1,0,9.5605469,40.560547L24,26.121094 38.439453,40.560547A1.50015,1.50015,0,1,0,40.560547,38.439453L26.121094,24 40.560547,9.5605469A1.50015,1.50015,0,0,0,39.486328,6.9785156z"
+                  Fill="{Binding (TextElement.Foreground), RelativeSource={RelativeSource Self}}"/>
+        </Viewbox>
+    </DataTemplate>
+    
+    
+
+    <DataTemplate x:Key="PuzzledImage">
+        <Image>
+            <Image.Source>
+                <DrawingImage>
+                    <DrawingImage.Drawing>
+                        <DrawingGroup>
+                            <DrawingGroup.Children>
+                                <DrawingGroup>
+                                    <DrawingGroup.Children>
+                                        <GeometryDrawing Pen="{x:Null}">
+                                            <GeometryDrawing.Brush>
+                                                <LinearGradientBrush StartPoint="14.031,-160.031" EndPoint="42.11,-188.11" MappingMode="Absolute" SpreadMethod="Pad" Opacity="1" Transform="6.123233995736766E-17,1,-1,6.123233995736766E-17,-150,-4">
+                                                    <LinearGradientBrush.GradientStops>
+                                                        <GradientStop Color="#FFFEDE00" Offset="0" />
+                                                        <GradientStop Color="#FFFECC00" Offset="0.519" />
+                                                        <GradientStop Color="#FFFFB700" Offset="1" />
+                                                    </LinearGradientBrush.GradientStops>
+                                                </LinearGradientBrush>
+                                            </GeometryDrawing.Brush>
+                                            <GeometryDrawing.Geometry>
+                                                <PathGeometry FillRule="Nonzero" Figures="M24,44C35.045,44 44,35.045 44,24 44,12.954999999999998 35.045,4 24,4 12.954999999999998,4 4,12.955 4,24 4,35.045 12.955,44 24,44z" />
+                                            </GeometryDrawing.Geometry>
+                                        </GeometryDrawing>
+                                        <GeometryDrawing Brush="#FFFFFFFF" Pen="{x:Null}">
+                                            <GeometryDrawing.Geometry>
+                                                <EllipseGeometry RadiusX="4" RadiusY="4" Center="32,22" />
+                                            </GeometryDrawing.Geometry>
+                                        </GeometryDrawing>
+                                        <GeometryDrawing Brush="#FF343434" Pen="{x:Null}">
+                                            <GeometryDrawing.Geometry>
+                                                <EllipseGeometry RadiusX="2" RadiusY="2" Center="33,21" />
+                                            </GeometryDrawing.Geometry>
+                                        </GeometryDrawing>
+                                        <GeometryDrawing Brush="#FFFFFFFF" Pen="{x:Null}">
+                                            <GeometryDrawing.Geometry>
+                                                <EllipseGeometry RadiusX="4" RadiusY="4" Center="17,22" />
+                                            </GeometryDrawing.Geometry>
+                                        </GeometryDrawing>
+                                        <GeometryDrawing Brush="#FF343434" Pen="{x:Null}">
+                                            <GeometryDrawing.Geometry>
+                                                <EllipseGeometry RadiusX="2" RadiusY="2" Center="18,21" />
+                                            </GeometryDrawing.Geometry>
+                                        </GeometryDrawing>
+                                        <GeometryDrawing Brush="#FFC767E5" Pen="{x:Null}">
+                                            <GeometryDrawing.Geometry>
+                                                <PathGeometry FillRule="Nonzero" Figures="M38.121,13.321C38.055,13.149 37.913000000000004,12.639 37.913000000000004,12.134 37.913000000000004,9.26 40.87200000000001,9.15 40.87200000000001,7.018000000000001 40.87200000000001,5.676 39.54600000000001,5.593000000000001 39.309000000000005,5.593000000000001 37.803000000000004,5.593000000000001 36.627,6.454000000000001 36.133,6.889000000000001L36.133,3.91C36.641,3.607 37.803,3 39.656,3 43.946,3 44,5.949 44,6.582 44,9.986 40.487,10.239 40.487,12.42 40.487,12.875 40.652,13.208 40.724000000000004,13.32L38.121,13.32 38.121,13.321z M39.565,18C38.748,18 37.885,17.49 37.885,16.501 37.885,15.512000000000004 38.782,15.020000000000001 39.565,15.020000000000001 40.348,15.020000000000001 41.217999999999996,15.459000000000001 41.217999999999996,16.501 41.217999999999996,17.543 40.382,18 39.565,18z" />
+                                            </GeometryDrawing.Geometry>
+                                        </GeometryDrawing>
+                                        <GeometryDrawing Brush="#FF343434" Pen="{x:Null}">
+                                            <GeometryDrawing.Geometry>
+                                                <PathGeometry FillRule="Nonzero" Figures="M32.053,35.951C31.784999999999997,35.951 31.517999999999997,35.844 31.320999999999998,35.633 29.435,33.608000000000004 26.766999999999996,32.445 24,32.445 22.418,32.445 20.907,32.803 19.506,33.508 19.01,33.759 18.411,33.558 18.163,33.066 17.914,32.573 18.113,31.971000000000004 18.606,31.723000000000003 20.289,30.874000000000002 22.104000000000003,30.445000000000004 24.001,30.445000000000004 27.321,30.445000000000004 30.523000000000003,31.839000000000002 32.786,34.269000000000005 33.162,34.67300000000001 33.14,35.306000000000004 32.735,35.682 32.542,35.862 32.297,35.951 32.053,35.951z" />
+                                            </GeometryDrawing.Geometry>
+                                        </GeometryDrawing>
+                                    </DrawingGroup.Children>
+                                    <DrawingGroup.ClipGeometry>
+                                        <RectangleGeometry Rect="0,0,48,48" />
+                                    </DrawingGroup.ClipGeometry>
+                                </DrawingGroup>
+                            </DrawingGroup.Children>
+                        </DrawingGroup>
+                    </DrawingImage.Drawing>
+                </DrawingImage>
+            </Image.Source>
+        </Image>
+    </DataTemplate>
+
+    <DataTemplate x:Key="SmilingFaceWithHeartImage">
+        <Image>
+            <Image.Source>
+                <DrawingImage>
+                    <DrawingImage.Drawing>
+                        <DrawingGroup>
+                            <DrawingGroup.Children>
+                                <DrawingGroup>
+                                    <DrawingGroup.Children>
+                                        <GeometryDrawing Pen="{x:Null}">
+                                            <GeometryDrawing.Brush>
+                                                <LinearGradientBrush StartPoint="-461.969,-500.031" EndPoint="-433.89,-528.11" MappingMode="Absolute" SpreadMethod="Pad" Opacity="1" Transform="6.123233995736766E-17,1,-1,6.123233995736766E-17,-489.99999999999994,472">
+                                                    <LinearGradientBrush.GradientStops>
+                                                        <GradientStop Color="#FFFEDE00" Offset="0" />
+                                                        <GradientStop Color="#FFFECC00" Offset="0.519" />
+                                                        <GradientStop Color="#FFFFB700" Offset="1" />
+                                                    </LinearGradientBrush.GradientStops>
+                                                </LinearGradientBrush>
+                                            </GeometryDrawing.Brush>
+                                            <GeometryDrawing.Geometry>
+                                                <PathGeometry FillRule="Nonzero" Figures="M24,44C35.045,44 44,35.045 44,24 44,12.954999999999998 35.045,4 24,4 12.954999999999998,4 4,12.955 4,24 4,35.045 12.955,44 24,44z" />
+                                            </GeometryDrawing.Geometry>
+                                        </GeometryDrawing>
+                                        <GeometryDrawing Brush="#FFFFFFFF" Pen="{x:Null}">
+                                            <GeometryDrawing.Geometry>
+                                                <EllipseGeometry RadiusX="4" RadiusY="4" Center="16,22" />
+                                            </GeometryDrawing.Geometry>
+                                        </GeometryDrawing>
+                                        <GeometryDrawing Brush="#FFFFFFFF" Pen="{x:Null}">
+                                            <GeometryDrawing.Geometry>
+                                                <EllipseGeometry RadiusX="4" RadiusY="4" Center="32,22" />
+                                            </GeometryDrawing.Geometry>
+                                        </GeometryDrawing>
+                                        <GeometryDrawing Brush="#FF343434" Pen="{x:Null}">
+                                            <GeometryDrawing.Geometry>
+                                                <EllipseGeometry RadiusX="2" RadiusY="2" Center="16,22" />
+                                            </GeometryDrawing.Geometry>
+                                        </GeometryDrawing>
+                                        <GeometryDrawing Brush="#FF343434" Pen="{x:Null}">
+                                            <GeometryDrawing.Geometry>
+                                                <EllipseGeometry RadiusX="2" RadiusY="2" Center="32,22" />
+                                            </GeometryDrawing.Geometry>
+                                        </GeometryDrawing>
+                                        <GeometryDrawing Brush="#FF343434" Pen="{x:Null}">
+                                            <GeometryDrawing.Geometry>
+                                                <PathGeometry FillRule="Nonzero" Figures="M31.751,31.684C32.116,32.098 32.076,32.730000000000004 31.661,33.095 29.536,34.966 26.815,35.995999999999995 24,35.995999999999995 21.185,35.995999999999995 18.464,34.965999999999994 16.34,33.095 15.925,32.73 15.885,32.098 16.25,31.683999999999997 16.614,31.269 17.246,31.229 17.661,31.593999999999998 19.42,33.143 21.671,33.995999999999995 24,33.995999999999995 26.329,33.995999999999995 28.58,33.142999999999994 30.34,31.593999999999994 30.53,31.425999999999995 30.765,31.343999999999994 31,31.343999999999994 31.277,31.344 31.553,31.459 31.751,31.684z" />
+                                            </GeometryDrawing.Geometry>
+                                        </GeometryDrawing>
+                                        <GeometryDrawing Pen="{x:Null}">
+                                            <GeometryDrawing.Brush>
+                                                <LinearGradientBrush StartPoint="35.582,-19.985" EndPoint="43.811,-32.657" MappingMode="Absolute" SpreadMethod="Pad" Opacity="1" Transform="1,0,0,-1,0,-18">
+                                                    <LinearGradientBrush.GradientStops>
+                                                        <GradientStop Color="#FFF44F5A" Offset="0" />
+                                                        <GradientStop Color="#FFEE3D4A" Offset="0.44299999999999995" />
+                                                        <GradientStop Color="#FFE52030" Offset="1" />
+                                                    </LinearGradientBrush.GradientStops>
+                                                </LinearGradientBrush>
+                                            </GeometryDrawing.Brush>
+                                            <GeometryDrawing.Geometry>
+                                                <PathGeometry FillRule="Nonzero" Figures="M39.015,5.236C39.015,5.236 41.017,2.9999999999999996 43.487,2.9999999999999996 45.957,2.9999999999999996 47.959,5.029 47.959,7.4719999999999995 47.959,8.985999999999999 46.468,10.453 46.468,10.453L39.77,17.152C39.353,17.569000000000003,38.678000000000004,17.569000000000003,38.261,17.152L31.563000000000002,10.453000000000001C31.563000000000002,10.453000000000001 30.072000000000003,8.985000000000001 30.072000000000003,7.472000000000001 30.071,5.029 32.073,3 34.543,3 37.013,3 39.015,5.236 39.015,5.236z" />
+                                            </GeometryDrawing.Geometry>
+                                        </GeometryDrawing>
+                                    </DrawingGroup.Children>
+                                    <DrawingGroup.ClipGeometry>
+                                        <RectangleGeometry Rect="0,0,48,48" />
+                                    </DrawingGroup.ClipGeometry>
+                                </DrawingGroup>
+                            </DrawingGroup.Children>
+                        </DrawingGroup>
+                    </DrawingImage.Drawing>
+                </DrawingImage>
+
+            </Image.Source>
+        </Image>
+    </DataTemplate>
+    
+</ResourceDictionary>
