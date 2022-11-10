@@ -1,3 +1,3 @@
-# פותר סודוקו
+# SudokuSolver
 
-  אפלקציה שולחנית לחידות סודוקו, עם מנוע לפתרון מצבים, ומחולל חידות סודוקו ברמות קושי שונות.
+A desktop application for the Sudoku game, with an engine for solving situations, and a Sudoku puzzle generator of different difficulty levels.
