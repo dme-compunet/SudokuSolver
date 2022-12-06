@@ -37,22 +37,22 @@ namespace Compunet.SudokuSolver.Core
 
             var board = SudokuBoardCreator.CreateEditable(resolte);
 
-            int TakeRandomForRemove()
+            int CreateRandomForRemove()
             {
                 return level switch
                 {
-                    SudokuPuzzleLevel.Easy => random.Next(3, 8),
-                    SudokuPuzzleLevel.Medium => random.Next(5, 9),
-                    SudokuPuzzleLevel.Hard => random.Next(6, 9),
+                    SudokuPuzzleLevel.Easy => random.Next(4, 6),
+                    SudokuPuzzleLevel.Medium => random.Next(5, 7),
+                    SudokuPuzzleLevel.Hard => random.Next(6, 8),
                     _ => 0
                 };
             }
 
             var cells = Cell.AllRange.Shuffle();
 
-            foreach (var square in cells.GroupBy(c => c.Square))
+            foreach (var square in cells.GroupBy(c => c.Box))
             {
-                foreach (var cell in square.Take(TakeRandomForRemove()))
+                foreach (var cell in square.Take(CreateRandomForRemove()))
                 {
                     board.SetValue(cell, Value.Zero);
                 }

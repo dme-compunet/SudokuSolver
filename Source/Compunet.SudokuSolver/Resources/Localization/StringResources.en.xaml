@@ -3,7 +3,7 @@
                     xmlns:system="clr-namespace:System;assembly=netstandard">
 
     <FlowDirection x:Key="MainFlowDirection">LeftToRight</FlowDirection>
-    <FlowDirection x:Key="DiffFlowDirection">RightToLeft</FlowDirection>
+    <FlowDirection x:Key="ReverseFlowDirection">RightToLeft</FlowDirection>
 
     <system:String x:Key="SolutionTrySolve">Tty solve it</system:String>
     <system:String x:Key="SolutionSolving">Solving...</system:String>
@@ -20,6 +20,7 @@
     <system:String x:Key="ChangeThemeToolTip">Change theme</system:String>
     <system:String x:Key="ChangeLangToolTip">Change Language</system:String>
     <system:String x:Key="CompressWindowToolTip">Compress</system:String>
+    <system:String x:Key="PrintSudokuToolTip">Print</system:String>
     <system:String x:Key="CreateSudokuPuzzleToolTip">Create a sudoku puzzle</system:String>
     <system:String x:Key="SubmitFeedbackToolTip">Submit feedback</system:String>
 

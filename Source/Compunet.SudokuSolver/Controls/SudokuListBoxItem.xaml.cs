@@ -56,7 +56,7 @@ namespace Compunet.SudokuSolver.Controls
         private static void OnValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             Value value = (Value)e.NewValue;
-            d.SetValue(ValueTextProperty, value.IsZero ? string.Empty : value.ToString());
+            d.SetValue(ValueTextProperty, value.ToDisplayString());
         }
     }
 }

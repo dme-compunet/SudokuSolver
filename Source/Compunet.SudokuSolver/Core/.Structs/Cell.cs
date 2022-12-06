@@ -20,12 +20,9 @@ namespace Compunet.SudokuSolver.Core
 
         #endregion
 
-        //public static readonly Cell First = new(0);
-        //public static readonly Cell Last = new(80);
-
         public int Row => Index / 9;
         public int Column => Index % 9;
-        public int Square => Column / 3 + (Row / 3 * 3);
+        public int Box => Column / 3 + (Row / 3 * 3);
         public int Index { get; }
 
         public bool IsFirst => Index == 0;
@@ -102,7 +99,7 @@ namespace Compunet.SudokuSolver.Core
 
         public override string ToString()
         {
-            return $"Row: {Row}, Column: {Column}, Square: {Square}";
+            return $"Row: {Row}, Column: {Column}, Square: {Box}";
         }
 
         #endregion

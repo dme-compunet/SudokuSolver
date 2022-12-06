@@ -1,6 +1,7 @@
 ﻿using Compunet.SudokuSolver.Application;
 using Compunet.SudokuSolver.Container;
 using Compunet.SudokuSolver.Mvvm;
+using Compunet.SudokuSolver.Print;
 using Compunet.SudokuSolver.Services;
 using Microsoft.Extensions.DependencyInjection;
 using System.Windows;
@@ -32,6 +33,7 @@ namespace Compunet.SudokuSolver
                            .AddSingleton<ISudokuInputService, SudokuInputService>()
                            .AddSingleton<IApplicationResourceManager, ApplicationResourceManager>()
                            .AddSingleton<ICreatePuzzleDialogService, CreatePuzzleDialogService>()
+                           .AddSingleton<IPrintService, PrintService>()
                            .AddSingleton<ISettingsService, SettingsService>()
                            .AddSingleton<IExitService, ExitService>()
                            ;

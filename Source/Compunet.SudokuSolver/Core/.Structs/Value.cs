@@ -26,8 +26,6 @@ namespace Compunet.SudokuSolver.Core
         public static Value operator ++(Value value) => new(value.value + 1);
         public static Value operator --(Value value) => new(value.value - 1);
 
-        private static readonly Random random = new();
-
         public static Value[] GenerateRandomRange()
         {
             var arr = Enumerable.Range(1, 9)
@@ -37,6 +35,11 @@ namespace Compunet.SudokuSolver.Core
             arr.Shuffle();
 
             return arr;
+        }
+
+        public string ToDisplayString()
+        {
+            return value == 0 ? string.Empty : ToString();
         }
 
         #region Equals

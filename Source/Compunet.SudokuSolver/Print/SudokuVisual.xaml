@@ -1,0 +1,108 @@
+﻿<UserControl x:Class="Compunet.SudokuSolver.Print.SudokuVisual"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Compunet.SudokuSolver.Print"
+             mc:Ignorable="d" 
+             FlowDirection="LeftToRight"
+             d:DesignHeight="450" d:DesignWidth="800">
+    
+    <Grid Width="276"
+          Height="276">
+
+        <Canvas Name="canvas" 
+                Width="270"
+                Height="270"
+                Margin="2">
+            
+            <Border Width="1.5"
+                    Height="270"
+                    Background="Black"
+                    Canvas.Left="90"/>
+            <Border Width="1.5"
+                    Height="270"
+                    Background="Black"
+                    Canvas.Left="180"/>
+            <Border Width="270"
+                    Height="1.5"
+                    Background="Black"
+                    Canvas.Top="90"/>
+            <Border Width="270"
+                    Height="1.5"
+                    Background="Black"
+                    Canvas.Top="180"/>
+            
+            <Border Width="270"
+                    Height="0.5"
+                    Background="Black"
+                    Canvas.Top="30"/>
+            <Border Width="270"
+                    Height="0.5"
+                    Background="Black"
+                    Canvas.Top="60"/>
+            <Border Width="270"
+                    Height="0.5"
+                    Background="Black"
+                    Canvas.Top="120"/>
+            <Border Width="270"
+                    Height="0.5"
+                    Background="Black"
+                    Canvas.Top="150"/>
+            <Border Width="270"
+                    Height="0.5"
+                    Background="Black"
+                    Canvas.Top="210"/>
+            <Border Width="270"
+                    Height="0.5"
+                    Background="Black"
+                    Canvas.Top="240"/>
+            
+            <Border Width="0.5"
+                    Height="270"
+                    Background="Black"
+                    Canvas.Left="30"/>
+            <Border Width="0.5"
+                    Height="270"
+                    Background="Black"
+                    Canvas.Left="60"/>
+            <Border Width="0.5"
+                    Height="270"
+                    Background="Black"
+                    Canvas.Left="120"/>
+            <Border Width="0.5"
+                    Height="270"
+                    Background="Black"
+                    Canvas.Left="150"/>
+            <Border Width="0.5"
+                    Height="270"
+                    Background="Black"
+                    Canvas.Left="210"/>
+            <Border Width="0.5"
+                    Height="270"
+                    Background="Black"
+                    Canvas.Left="240"/>
+
+            <Canvas.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="Width" Value="30" />
+                    <Setter Property="Height" Value="30" />
+                    <Setter Property="TextAlignment" Value="Center" />
+                    <Setter Property="Padding" Value="6" />
+                    <Setter Property="FontSize" Value="17" />
+                    <Setter Property="FontFamily" Value="SegueUI" />
+                    <Setter Property="FontWeight" Value="Medium" />
+                    <!--<Setter Property="FontFamily" Value="{StaticResource UIFont}" />-->
+                </Style>
+            </Canvas.Resources>
+            
+        </Canvas>
+
+
+        <Border BorderThickness="3"
+                BorderBrush="Black"/>
+
+
+    </Grid>
+    
+</UserControl>

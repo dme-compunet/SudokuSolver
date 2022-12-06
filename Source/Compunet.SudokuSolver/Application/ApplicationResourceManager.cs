@@ -73,12 +73,12 @@ namespace Compunet.SudokuSolver.Application
         {
             var he = new ResourceDictionary
             {
-                Source = new Uri("/Resources/Languages/Hebrew.xaml", UriKind.RelativeOrAbsolute)
+                Source = new Uri("/Resources/Localization/StringResources.he.xaml", UriKind.RelativeOrAbsolute)
             };
 
             var en = new ResourceDictionary
             {
-                Source = new Uri("/Resources/Languages/English.xaml", UriKind.RelativeOrAbsolute)
+                Source = new Uri("/Resources/Localization/StringResources.en.xaml", UriKind.RelativeOrAbsolute)
             };
 
             var en_lang = new ThemeApplicationResource(DefaultEnglishLanguage, ApplicationResourceCategory.LanguageAsset, new Lazy<ResourceDictionary>(en));

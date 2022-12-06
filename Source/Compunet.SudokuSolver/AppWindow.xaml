@@ -37,7 +37,7 @@
                     <views:SudokuControl Margin="20" 
                                          Width="500"
                                          Height="550"/>
-
+                    
                 </Viewbox>
 
             </Grid>

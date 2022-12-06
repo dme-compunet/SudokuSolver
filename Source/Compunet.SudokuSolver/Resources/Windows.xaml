@@ -2,9 +2,10 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
                     xmlns:b="http://schemas.microsoft.com/xaml/behaviors" 
                     xmlns:controls="clr-namespace:Compunet.SudokuSolver.Controls"
-                    xmlns:behavior="clr-namespace:Compunet.SudokuSolver.Behaviors">
+                    xmlns:behavior="clr-namespace:Compunet.SudokuSolver.Behaviors" 
+                    xmlns:system="clr-namespace:System;assembly=netstandard">
 
-    <DataTemplate x:Key="SystemWindowButtonCloseTemplate">
+    <!--<DataTemplate x:Key="SystemWindowButtonCloseTemplate">
         <Path StrokeThickness="0.9" 
               Focusable="False"
               Data="M0,0 L10,10 M10,0 L0,10" 
@@ -71,7 +72,7 @@
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
 
-                            <!-- Title -->
+                            --><!-- Title --><!--
                             <Grid Grid.Row="0">
 
                                 <Border Name="TitleBorder" 
@@ -96,7 +97,7 @@
                                                             FontSize="{StaticResource FontSizeLarger}"/>
                                     </Grid>
 
-                                    <!-- System Buttons -->
+                                    --><!-- System Buttons --><!--
                                     <Grid Margin="8" Grid.Column="1">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="Auto"/>
@@ -142,7 +143,7 @@
 
                             </Grid>
 
-                            <!-- Content -->
+                            --><!-- Content --><!--
                             <ContentPresenter Content="{TemplateBinding Content}" 
                                               Name="ContentPresenter"
                                               Grid.Row="1"/>
@@ -170,7 +171,197 @@
         </Setter>
 
 
+    </Style>-->
+
+    <DataTemplate x:Key="CloseWindowIcon">
+        <Image>
+            <Image.Source>
+                <DrawingImage>
+                    <DrawingImage.Drawing>
+                        <DrawingGroup>
+                            <DrawingGroup.Children>
+                                <DrawingGroup>
+                                    <DrawingGroup.Children>
+                                        <GeometryDrawing Brush="{Binding (TextElement.Foreground), RelativeSource={RelativeSource TemplatedParent}}" Pen="{x:Null}">
+                                            <GeometryDrawing.Geometry>
+                                                <PathGeometry FillRule="Nonzero" Figures="M39.486328,6.9785156A1.50015,1.50015,0,0,0,38.439453,7.4394531L24,21.878906 9.5605469,7.4394531A1.50015,1.50015,0,0,0,8.484375,6.984375A1.50015,1.50015,0,0,0,7.4394531,9.5605469L21.878906,24 7.4394531,38.439453A1.50015,1.50015,0,1,0,9.5605469,40.560547L24,26.121094 38.439453,40.560547A1.50015,1.50015,0,1,0,40.560547,38.439453L26.121094,24 40.560547,9.5605469A1.50015,1.50015,0,0,0,39.486328,6.9785156z" />
+                                            </GeometryDrawing.Geometry>
+                                        </GeometryDrawing>
+                                    </DrawingGroup.Children>
+                                    <DrawingGroup.ClipGeometry>
+                                        <RectangleGeometry Rect="0 0 48 48" />
+                                    </DrawingGroup.ClipGeometry>
+                                </DrawingGroup>
+                            </DrawingGroup.Children>
+                        </DrawingGroup>
+                    </DrawingImage.Drawing>
+                </DrawingImage>
+            </Image.Source>
+        </Image>
+    </DataTemplate>
+
+    <DataTemplate x:Key="MaximizeWindowIcon">
+        <Viewbox>
+            <Grid Width="48" Height="48">
+                <Border BorderThickness="4" 
+                        CornerRadius="4"
+                        BorderBrush="{Binding (TextElement.Foreground), RelativeSource={RelativeSource TemplatedParent}}"/>
+            </Grid>
+        </Viewbox>
+    </DataTemplate>
+
+    <DataTemplate x:Key="MinimizeWindowIcon">
+        <Viewbox>
+            <Grid Width="48" Height="48">
+                <Border BorderThickness="0" 
+                        Height="4"
+                        CornerRadius="3"
+                        Background="{Binding (TextElement.Foreground), RelativeSource={RelativeSource TemplatedParent}}"/>
+            </Grid>
+        </Viewbox>
+    </DataTemplate>
+
+
+    <system:Double x:Key="WindowCaptionHeight">60</system:Double>
+    <GridLength x:Key="WindowCaptionGridLength">60</GridLength>
+    <CornerRadius x:Key="WindowCornerRadius">15</CornerRadius>
+
+    <Style x:Key="ThemeWindow" TargetType="Window">
+        <Setter Property="WindowStyle" Value="None" />
+        <Setter Property="FlowDirection" Value="RightToLeft" />
+        <Setter Property="AllowsTransparency" Value="True" />
+        <Setter Property="Background" Value="{DynamicResource Primary50}" />
+
+        <Setter Property="WindowChrome.WindowChrome">
+            <Setter.Value>
+                <WindowChrome CaptionHeight="{StaticResource WindowCaptionHeight}"/>
+            </Setter.Value>
+        </Setter>
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Window">
+
+                    <Grid Margin="0">
+
+                        <Grid>
+
+                            <Border Background="Black"
+                                    Margin="6"
+                                    CornerRadius="{StaticResource WindowCornerRadius}">
+
+                                <Border.Effect>
+                                    <DropShadowEffect ShadowDepth="0"
+                                                      BlurRadius="7"
+                                                      Opacity="0.5" />
+                                </Border.Effect>
+
+                            </Border>
+
+                            <Border Name="RootBorder"
+                                    Margin="5"
+                                    Background="{TemplateBinding Background}"
+                                    CornerRadius="{StaticResource WindowCornerRadius}"
+                                    controls:BorderExtensions.ClipToCornerRadius="True">
+
+                                <Grid>
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="{StaticResource WindowCaptionGridLength}"/>
+                                        <RowDefinition Height="*"/>
+
+                                    </Grid.RowDefinitions>
+
+                                    <Grid Grid.Row="0">
+
+                                        <Border BorderBrush="{DynamicResource Primary100}" 
+                                                BorderThickness="0 0 0 1"/>
+
+                                        <TextBlock Text="{TemplateBinding Title}"
+                                                   FontSize="{StaticResource FontSizeLarger}"
+                                                   FontFamily="{StaticResource UIFont}"
+                                                   FontWeight="Medium"
+                                                   VerticalAlignment="Center"
+                                                   HorizontalAlignment="Center"
+                                                   Foreground="{DynamicResource Primary900}"/>
+
+                                        <!--<TextBlock Text="{Binding Title}"
+                                                   FontSize="{StaticResource FontSizeLarger}"
+                                                   FontFamily="{StaticResource UIFont}"
+                                                   FontWeight="Medium"
+                                                   VerticalAlignment="Center"
+                                                   HorizontalAlignment="Center"
+                                                   Foreground="{DynamicResource Primary900}"/>-->
+
+                                        <StackPanel Orientation="Horizontal"
+                                                    Margin="9"
+                                                    HorizontalAlignment="Right"
+                                                    FlowDirection="{DynamicResource ReverseFlowDirection}">
+
+                                            <Button ContentTemplate="{StaticResource CloseWindowIcon}"
+                                                    Style="{StaticResource ThemeSystemWindowButton}"
+                                                    Padding="11"
+                                                    Command="{Binding CloseCommand}"/>
+
+                                            <Button ContentTemplate="{StaticResource MaximizeWindowIcon}"
+                                                    Style="{StaticResource ThemeSystemWindowButton}"
+                                                    Padding="11"
+                                                    Command="{Binding MaximizeCommand}"/>
+
+                                            <Button ContentTemplate="{StaticResource MinimizeWindowIcon}"
+                                                    Style="{StaticResource ThemeSystemWindowButton}"
+                                                    Padding="11"
+                                                    Command="{Binding MinimizeCommand}"/>
+
+                                            <!--<Button ContentTemplate="{StaticResource CloseWindowIcon}"
+                                                    TextElement.Foreground="#ff4747"
+                                                    Style="{StaticResource ThemeSystemWindowButton}"
+                                                    Padding="12"
+                                                    WindowChrome.IsHitTestVisibleInChrome="True"
+                                                    Command="{Binding CloseCommand}"/>
+
+                                            <Button ContentTemplate="{StaticResource MaximizeWindowIcon}"
+                                                    TextElement.Foreground="#ffa800"
+                                                    Style="{StaticResource ThemeSystemWindowButton}"
+                                                    Padding="12"
+                                                    WindowChrome.IsHitTestVisibleInChrome="True"
+                                                    Command="{Binding MaximizeCommand}"/>
+
+                                            <Button ContentTemplate="{StaticResource MinimizeWindowIcon}"
+                                                    TextElement.Foreground="#00c541"
+                                                    Style="{StaticResource ThemeSystemWindowButton}"
+                                                    Padding="12"
+                                                    WindowChrome.IsHitTestVisibleInChrome="True"
+                                                    Command="{Binding MinimizeCommand}"/>-->
+
+                                        </StackPanel>
+
+                                    </Grid>
+
+                                    <Grid Grid.Row="1">
+                                        <ContentPresenter Margin="{TemplateBinding Padding}"/>
+                                    </Grid>
+
+                                </Grid>
+
+                            </Border>
+
+                        </Grid>
+
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="WindowState" Value="Maximized">
+                            <Setter Property="CornerRadius" TargetName="RootBorder" Value="0" />
+                            <Setter Property="Margin" TargetName="RootBorder" Value="0" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
+
 
 
 </ResourceDictionary>

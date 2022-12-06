@@ -22,7 +22,6 @@ namespace Compunet.SudokuSolver.Views
 #else
                 DataContext = IoC.Simple.GetRequiredService<AppSidebarViewModel>();
 #endif
-
         }
     }
 }

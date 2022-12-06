@@ -3,7 +3,7 @@
                     xmlns:system="clr-namespace:System;assembly=netstandard">
 
     <FlowDirection x:Key="MainFlowDirection">RightToLeft</FlowDirection>
-    <FlowDirection x:Key="DiffFlowDirection">LeftToRight</FlowDirection>
+    <FlowDirection x:Key="ReverseFlowDirection">LeftToRight</FlowDirection>
 
 
     <system:String x:Key="SolutionTrySolve">נסה לפתור את זה</system:String>
@@ -21,6 +21,7 @@
     <system:String x:Key="ChangeThemeToolTip">החלף ערכת נושא</system:String>
     <system:String x:Key="ChangeLangToolTip">החלף שפה</system:String>
     <system:String x:Key="CompressWindowToolTip">צמצם</system:String>
+    <system:String x:Key="PrintSudokuToolTip">הדפס</system:String>
     <system:String x:Key="CreateSudokuPuzzleToolTip">צור חידת סודוקו</system:String>
     <system:String x:Key="SubmitFeedbackToolTip">שלח משוב</system:String>
 

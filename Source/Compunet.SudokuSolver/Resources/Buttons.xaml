@@ -96,10 +96,17 @@
         <Setter Property="controls:ButtonChrome.BubbleBackgroundOpacity" Value="0.2" />
     </Style>
 
-    <Style x:Key="ThemeSystemWindowButton" TargetType="Button" BasedOn="{StaticResource ThemeBasicBubbleButton}">
+    <!--<Style x:Key="ThemeSystemWindowButton" TargetType="Button" BasedOn="{StaticResource ThemeBasicBubbleButton}">
         <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
         <Setter Property="Background" Value="{DynamicResource Primary100}" />
+    </Style>-->
+
+    <Style x:Key="ThemeSystemWindowButton" TargetType="Button" BasedOn="{StaticResource ThemeBasicBubbleButton}">
+        <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
+        <Setter Property="controls:ButtonChrome.CornerRadius" Value="50" />
+        <Setter Property="Background" Value="{x:Null}" />
     </Style>
+
 
     <!--#endregion-->
 

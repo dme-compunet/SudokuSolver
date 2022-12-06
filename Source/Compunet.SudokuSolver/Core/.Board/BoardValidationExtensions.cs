@@ -36,7 +36,7 @@ namespace Compunet.SudokuSolver.Core
             return false;
         }
 
-        public static bool SquareContains(this IBoard board, int sequreindex, Value value, Cell? ignore = null)
+        public static bool BoxContains(this IBoard board, int sequreindex, Value value, Cell? ignore = null)
         {
             int r = sequreindex / 3 * 3;
             int c = sequreindex % 3 * 3;
@@ -62,7 +62,7 @@ namespace Compunet.SudokuSolver.Core
         {
             return !(board.RowContains(position.Row, value)
                      || board.ColumnContains(position.Column, value)
-                     || board.SquareContains(position.Square, value));
+                     || board.BoxContains(position.Box, value));
         }
 
         public static IEnumerable<Cell> GetWarns(this IBoard state)
@@ -80,7 +80,7 @@ namespace Compunet.SudokuSolver.Core
                 if (state.ColumnContains(cell.Column, value, cell))
                     yield return cell;
 
-                if (state.SquareContains(cell.Square, value, cell))
+                if (state.BoxContains(cell.Box, value, cell))
                     yield return cell;
 
             }
